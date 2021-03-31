@@ -15,15 +15,17 @@ namespace CW2
     {
         public LoginWindow()
         {
-            InitializeComponent();
+            InitializeComponent();           
         }
-
+        User newUsr = new User();
         private void LoginBtn_Click(object sender, EventArgs e)
         {
             if(this.userNameTxtBox.Text.Equals("Sayan") && this.passwordTextBox1.Text.Equals("123"))
                 {
                     
-                    Register rg = new Register();
+                    this.newUsr.userName = this.userNameTxtBox.Text;
+                    Main rg = new Main();
+                    rg.newUser = this.newUsr;
                     this.Hide();
                     rg.Activate();
                     rg.Show();
@@ -35,12 +37,10 @@ namespace CW2
             }
         }
 
-        private void CloseIcon1_Load(object sender, EventArgs e)
+
+        private void closeBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("test");
             this.Close();
         }
-
-  
     }
 }

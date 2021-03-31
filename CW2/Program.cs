@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CW2.ViewController;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,8 @@ namespace CW2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginWindow());
+            //Application.Run(new LoginWindow());
+            Application.Run(new AddTransaction());
         }
     }
 }

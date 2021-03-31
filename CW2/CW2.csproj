@@ -46,11 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CloseIcon.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="User.cs" />
+    <Compile Include="ViewController\AddTransaction.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CloseIcon.Designer.cs">
-      <DependentUpon>CloseIcon.cs</DependentUpon>
+    <Compile Include="ViewController\AddTransaction.Designer.cs">
+      <DependentUpon>AddTransaction.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewController\Form1.cs">
       <SubType>Form</SubType>
@@ -72,8 +73,8 @@
     <Compile Include="ViewController\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CloseIcon.resx">
-      <DependentUpon>CloseIcon.cs</DependentUpon>
+    <EmbeddedResource Include="ViewController\AddTransaction.resx">
+      <DependentUpon>AddTransaction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewController\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

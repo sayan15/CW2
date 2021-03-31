@@ -12,9 +12,16 @@ namespace CW2.ViewController
 {
     public partial class Main : Form
     {
+        
         public Main()
         {
-            InitializeComponent();
+            InitializeComponent();  
+        }
+        public User newUser;
+    
+        private void Main_Load(object sender, EventArgs e)
+        {
+            this.usrLbl.Text = this.newUser.userName;
         }
 
     }

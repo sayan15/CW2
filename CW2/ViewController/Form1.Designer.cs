@@ -35,7 +35,7 @@ namespace CW2
             this.userNameTxtBox = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.closeIcon1 = new CW2.CloseIcon();
+            this.closeBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -48,9 +48,10 @@ namespace CW2
             this.panel1.Controls.Add(this.userNameTxtBox);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel1.Location = new System.Drawing.Point(40, 42);
+            this.panel1.Location = new System.Drawing.Point(45, 52);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(834, 408);
+            this.panel1.Size = new System.Drawing.Size(938, 510);
             this.panel1.TabIndex = 0;
             // 
             // LoginBtn
@@ -61,10 +62,11 @@ namespace CW2
             this.LoginBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SpringGreen;
             this.LoginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LoginBtn.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoginBtn.Location = new System.Drawing.Point(351, 292);
+            this.LoginBtn.Location = new System.Drawing.Point(395, 365);
+            this.LoginBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LoginBtn.Name = "LoginBtn";
             this.LoginBtn.Padding = new System.Windows.Forms.Padding(1);
-            this.LoginBtn.Size = new System.Drawing.Size(75, 32);
+            this.LoginBtn.Size = new System.Drawing.Size(84, 40);
             this.LoginBtn.TabIndex = 3;
             this.LoginBtn.Text = "Login";
             this.LoginBtn.UseVisualStyleBackColor = false;
@@ -73,21 +75,22 @@ namespace CW2
             // passwordTextBox1
             // 
             this.passwordTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.passwordTextBox1.Location = new System.Drawing.Point(210, 220);
+            this.passwordTextBox1.Location = new System.Drawing.Point(236, 275);
+            this.passwordTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.passwordTextBox1.Name = "passwordTextBox1";
             this.passwordTextBox1.PasswordChar = '*';
-            this.passwordTextBox1.Size = new System.Drawing.Size(357, 22);
+            this.passwordTextBox1.Size = new System.Drawing.Size(401, 26);
             this.passwordTextBox1.TabIndex = 2;
             this.passwordTextBox1.Text = "Password";
             // 
             // userNameTxtBox
             // 
             this.userNameTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.userNameTxtBox.Location = new System.Drawing.Point(210, 165);
-            this.userNameTxtBox.Margin = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.userNameTxtBox.Location = new System.Drawing.Point(236, 206);
+            this.userNameTxtBox.Margin = new System.Windows.Forms.Padding(0, 0, 0, 4);
             this.userNameTxtBox.Name = "userNameTxtBox";
             this.userNameTxtBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.userNameTxtBox.Size = new System.Drawing.Size(357, 22);
+            this.userNameTxtBox.Size = new System.Drawing.Size(401, 26);
             this.userNameTxtBox.TabIndex = 1;
             this.userNameTxtBox.Text = "UserName";
             // 
@@ -96,9 +99,10 @@ namespace CW2
             this.pictureBox1.BackgroundImage = global::CW2.Properties.Resources.Man;
             this.pictureBox1.Enabled = false;
             this.pictureBox1.Image = global::CW2.Properties.Resources.Man;
-            this.pictureBox1.Location = new System.Drawing.Point(315, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(354, 15);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(147, 101);
+            this.pictureBox1.Size = new System.Drawing.Size(165, 126);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -106,33 +110,39 @@ namespace CW2
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.RoyalBlue;
-            this.panel2.Controls.Add(this.closeIcon1);
+            this.panel2.Controls.Add(this.closeBtn);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(917, 155);
+            this.panel2.Size = new System.Drawing.Size(1032, 194);
             this.panel2.TabIndex = 1;
             // 
-            // closeIcon1
+            // closeBtn
             // 
-            this.closeIcon1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.closeIcon1.Location = new System.Drawing.Point(896, 0);
-            this.closeIcon1.Name = "closeIcon1";
-            this.closeIcon1.Size = new System.Drawing.Size(21, 20);
-            this.closeIcon1.TabIndex = 0;
-            this.closeIcon1.Click += new System.EventHandler(this.CloseIcon1_Load);
+            this.closeBtn.BackgroundImage = global::CW2.Properties.Resources.close;
+            this.closeBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.closeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.closeBtn.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.closeBtn.Location = new System.Drawing.Point(1002, 0);
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.Size = new System.Drawing.Size(29, 32);
+            this.closeBtn.TabIndex = 0;
+            this.closeBtn.UseVisualStyleBackColor = true;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
             // LoginWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(917, 478);
+            this.ClientSize = new System.Drawing.Size(1032, 598);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "LoginWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginWindow";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -150,7 +160,7 @@ namespace CW2
         private System.Windows.Forms.TextBox userNameTxtBox;
         private System.Windows.Forms.TextBox passwordTextBox1;
         private System.Windows.Forms.Button LoginBtn;
-        private CloseIcon closeIcon1;
+        private System.Windows.Forms.Button closeBtn;
     }
 }
 

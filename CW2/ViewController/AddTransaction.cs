@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CW2
+namespace CW2.ViewController
 {
-    public partial class CloseIcon : UserControl
+    public partial class AddTransaction : Form
     {
-        public CloseIcon()
+        public AddTransaction()
         {
             InitializeComponent();
         }
-
     }
 }
