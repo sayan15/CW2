@@ -35,9 +35,12 @@ namespace CW2
             }
         }
 
-        private void closeIcon_Click(object sender, EventArgs e)
+        private void CloseIcon1_Load(object sender, EventArgs e)
         {
+            MessageBox.Show("test");
             this.Close();
         }
+
+  
     }
 }
