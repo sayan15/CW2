@@ -34,5 +34,10 @@ namespace CW2
                 MessageBox.Show(this.userNameTxtBox.Text +""+ this.passwordTextBox1.Text);
             }
         }
+
+        private void closeIcon_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
