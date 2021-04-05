@@ -18,7 +18,7 @@ namespace CW2
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new LoginWindow());
-            Application.Run(new AddTransaction());
+            Application.Run(new LoginWindow());
         }
     }
 }

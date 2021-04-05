@@ -42,5 +42,12 @@ namespace CW2
         {
             this.Close();
         }
+
+        private void register_Click(object sender, EventArgs e)
+        {
+            Register register = new Register();
+            register.Activate();
+            register.ShowDialog();
+        }
     }
 }

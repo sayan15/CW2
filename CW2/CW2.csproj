@@ -47,11 +47,41 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="User.cs" />
+    <Compile Include="ViewController\AddEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewController\AddEvent.Designer.cs">
+      <DependentUpon>AddEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController\AddPayeeOrPayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewController\AddPayeeOrPayer.Designer.cs">
+      <DependentUpon>AddPayeeOrPayer.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewController\AddTransaction.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ViewController\AddTransaction.Designer.cs">
       <DependentUpon>AddTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController\EditEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewController\EditEvent.Designer.cs">
+      <DependentUpon>EditEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController\EditTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewController\EditTransaction.Designer.cs">
+      <DependentUpon>EditTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController\FinancialReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewController\FinancialReport.Designer.cs">
+      <DependentUpon>FinancialReport.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewController\Form1.cs">
       <SubType>Form</SubType>
@@ -73,8 +103,29 @@
     <Compile Include="ViewController\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewController\ViewPayerPayee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewController\ViewPayerPayee.Designer.cs">
+      <DependentUpon>ViewPayerPayee.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ViewController\AddEvent.resx">
+      <DependentUpon>AddEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewController\AddPayeeOrPayer.resx">
+      <DependentUpon>AddPayeeOrPayer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewController\AddTransaction.resx">
       <DependentUpon>AddTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewController\EditEvent.resx">
+      <DependentUpon>EditEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewController\EditTransaction.resx">
+      <DependentUpon>EditTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewController\FinancialReport.resx">
+      <DependentUpon>FinancialReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewController\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -94,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewController\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewController\ViewPayerPayee.resx">
+      <DependentUpon>ViewPayerPayee.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

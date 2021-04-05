@@ -36,6 +36,7 @@ namespace CW2
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.closeBtn = new System.Windows.Forms.Button();
+            this.register = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -43,6 +44,7 @@ namespace CW2
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.register);
             this.panel1.Controls.Add(this.LoginBtn);
             this.panel1.Controls.Add(this.passwordTextBox1);
             this.panel1.Controls.Add(this.userNameTxtBox);
@@ -62,7 +64,7 @@ namespace CW2
             this.LoginBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SpringGreen;
             this.LoginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LoginBtn.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoginBtn.Location = new System.Drawing.Point(395, 365);
+            this.LoginBtn.Location = new System.Drawing.Point(305, 370);
             this.LoginBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LoginBtn.Name = "LoginBtn";
             this.LoginBtn.Padding = new System.Windows.Forms.Padding(1);
@@ -131,6 +133,24 @@ namespace CW2
             this.closeBtn.UseVisualStyleBackColor = true;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
+            // register
+            // 
+            this.register.BackColor = System.Drawing.Color.RoyalBlue;
+            this.register.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.register.FlatAppearance.BorderSize = 0;
+            this.register.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SpringGreen;
+            this.register.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.register.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.register.Location = new System.Drawing.Point(490, 370);
+            this.register.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.register.Name = "register";
+            this.register.Padding = new System.Windows.Forms.Padding(1);
+            this.register.Size = new System.Drawing.Size(84, 40);
+            this.register.TabIndex = 4;
+            this.register.Text = "Register";
+            this.register.UseVisualStyleBackColor = false;
+            this.register.Click += new System.EventHandler(this.register_Click);
+            // 
             // LoginWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -161,6 +181,7 @@ namespace CW2
         private System.Windows.Forms.TextBox passwordTextBox1;
         private System.Windows.Forms.Button LoginBtn;
         private System.Windows.Forms.Button closeBtn;
+        private System.Windows.Forms.Button register;
     }
 }
 
