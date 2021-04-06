@@ -17,16 +17,20 @@ namespace CW2.ViewController
         {
             InitializeComponent();
         }
-        User user = new User();
+        UserDetails user = new UserDetails();
         private void registerBtn_Click(object sender, EventArgs e)
         {
             if (EmailIsValid(this.maiTtextBox.Text))
             {
                 if (PasswordTester(this.passwordRegTextBox.Text))
                 {
-                    if (this.passwordRegTextBox.Text.Equals(this.retypePassTextBox))
+                    if (this.passwordRegTextBox.Text.Equals(this.retypePassTextBox.Text))
                     {
-
+                        UserModel userModel = new UserModel();
+                        this.user.UserName = this.UserNameTextBox.Text;
+                        this.user.Password = this.passwordRegTextBox.Text;
+                        this.user.Mail = this.maiTtextBox.Text;
+                        LabelSetter(userModel.RegisterUser(user));
                     }
                     else
                     {
@@ -73,7 +77,14 @@ namespace CW2.ViewController
         public void LabelSetter(string text)
          {
             this.alertLabel.Text = text;
-            this.alertLabel.BackColor = System.Drawing.Color.Red;
+            if (text.Equals("Succesfully Added"))
+            {
+                this.alertLabel.BackColor = System.Drawing.Color.Green;
+            }
+            else
+            {
+                this.alertLabel.BackColor = System.Drawing.Color.Red;
+            }
         }
     }
 }

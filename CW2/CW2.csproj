@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,7 +55,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="User.cs" />
+    <Compile Include="CW2_SystemDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CW2_SystemDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CW2_SystemDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CW2_SystemDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CW2_SystemDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CW2_SystemDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Event.cs">
+      <DependentUpon>CW2_SystemDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PayerOrPayee.cs">
+      <DependentUpon>CW2_SystemDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction.cs">
+      <DependentUpon>CW2_SystemDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>CW2_SystemDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserDetails.cs" />
+    <Compile Include="UserModel.cs" />
     <Compile Include="ViewController\AddEvent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +186,14 @@
     <EmbeddedResource Include="ViewController\ViewPayerPayee.resx">
       <DependentUpon>ViewPayerPayee.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="CW2_SystemDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CW2_SystemDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="CW2_SystemDB.edmx.diagram">
+      <DependentUpon>CW2_SystemDB.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -170,6 +215,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CW2_SystemDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CW2_SystemDB.Context.cs</LastGenOutput>
+      <DependentUpon>CW2_SystemDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="CW2_SystemDB.edmx.sql" />
+    <Content Include="CW2_SystemDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CW2_SystemDB.cs</LastGenOutput>
+      <DependentUpon>CW2_SystemDB.edmx</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

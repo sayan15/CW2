@@ -17,11 +17,11 @@ namespace CW2.ViewController
         {
             InitializeComponent();  
         }
-        public User newUser;
+        public UserDetails newUser;
     
         private void Main_Load(object sender, EventArgs e)
         {
-            this.usrLbl.Text = this.newUser.userName;
+            this.usrLbl.Text = this.newUser.UserName;
         }
 
         private void addTransactionToolStripMenuItem_Click(object sender, EventArgs e)

@@ -12,11 +12,16 @@ namespace CW2
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Transaction
     {
         public int Id { get; set; }
-        public string UserName { get; set; }
-        public string Password { get; set; }
-        public string Mail { get; set; }
+        public string TransactionType { get; set; }
+        public string OccurenceType { get; set; }
+        public System.DateTime Date { get; set; }
+        public double Amount { get; set; }
+        public int UserId { get; set; }
+    
+        public virtual User User { get; set; }
+        public virtual PayerOrPayee PayerOrPayee { get; set; }
     }
 }

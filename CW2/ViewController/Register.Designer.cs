@@ -30,6 +30,8 @@ namespace CW2.ViewController
         private void InitializeComponent()
         {
             this.RegisterPanel1 = new System.Windows.Forms.Panel();
+            this.alertLabel = new System.Windows.Forms.Label();
+            this.registerBtn = new System.Windows.Forms.Button();
             this.retypePassTextBox = new System.Windows.Forms.TextBox();
             this.passwordRegTextBox = new System.Windows.Forms.TextBox();
             this.UserNameTextBox = new System.Windows.Forms.TextBox();
@@ -38,8 +40,6 @@ namespace CW2.ViewController
             this.regPassLbl = new System.Windows.Forms.Label();
             this.UserNameLbl = new System.Windows.Forms.Label();
             this.mailLbl = new System.Windows.Forms.Label();
-            this.registerBtn = new System.Windows.Forms.Button();
-            this.alertLabel = new System.Windows.Forms.Label();
             this.RegisterPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,14 +56,34 @@ namespace CW2.ViewController
             this.RegisterPanel1.Controls.Add(this.regPassLbl);
             this.RegisterPanel1.Controls.Add(this.UserNameLbl);
             this.RegisterPanel1.Controls.Add(this.mailLbl);
-            this.RegisterPanel1.Location = new System.Drawing.Point(12, 12);
+            this.RegisterPanel1.Location = new System.Drawing.Point(1, 2);
             this.RegisterPanel1.Name = "RegisterPanel1";
-            this.RegisterPanel1.Size = new System.Drawing.Size(731, 503);
+            this.RegisterPanel1.Size = new System.Drawing.Size(750, 409);
             this.RegisterPanel1.TabIndex = 0;
+            // 
+            // alertLabel
+            // 
+            this.alertLabel.AutoSize = true;
+            this.alertLabel.Location = new System.Drawing.Point(12, 9);
+            this.alertLabel.Name = "alertLabel";
+            this.alertLabel.Size = new System.Drawing.Size(0, 20);
+            this.alertLabel.TabIndex = 9;
+            this.alertLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // registerBtn
+            // 
+            this.registerBtn.BackColor = System.Drawing.Color.Silver;
+            this.registerBtn.Location = new System.Drawing.Point(319, 301);
+            this.registerBtn.Name = "registerBtn";
+            this.registerBtn.Size = new System.Drawing.Size(84, 37);
+            this.registerBtn.TabIndex = 8;
+            this.registerBtn.Text = "Register";
+            this.registerBtn.UseVisualStyleBackColor = false;
+            this.registerBtn.Click += new System.EventHandler(this.registerBtn_Click);
             // 
             // retypePassTextBox
             // 
-            this.retypePassTextBox.Location = new System.Drawing.Point(417, 203);
+            this.retypePassTextBox.Location = new System.Drawing.Point(417, 197);
             this.retypePassTextBox.Name = "retypePassTextBox";
             this.retypePassTextBox.PasswordChar = '*';
             this.retypePassTextBox.Size = new System.Drawing.Size(219, 26);
@@ -94,7 +114,7 @@ namespace CW2.ViewController
             // confirmPasswordlbl
             // 
             this.confirmPasswordlbl.AutoSize = true;
-            this.confirmPasswordlbl.Location = new System.Drawing.Point(116, 209);
+            this.confirmPasswordlbl.Location = new System.Drawing.Point(116, 203);
             this.confirmPasswordlbl.Name = "confirmPasswordlbl";
             this.confirmPasswordlbl.Size = new System.Drawing.Size(134, 20);
             this.confirmPasswordlbl.TabIndex = 3;
@@ -127,32 +147,12 @@ namespace CW2.ViewController
             this.mailLbl.TabIndex = 0;
             this.mailLbl.Text = "Mail Address";
             // 
-            // registerBtn
-            // 
-            this.registerBtn.BackColor = System.Drawing.Color.Silver;
-            this.registerBtn.Location = new System.Drawing.Point(324, 355);
-            this.registerBtn.Name = "registerBtn";
-            this.registerBtn.Size = new System.Drawing.Size(84, 37);
-            this.registerBtn.TabIndex = 8;
-            this.registerBtn.Text = "Register";
-            this.registerBtn.UseVisualStyleBackColor = false;
-            this.registerBtn.Click += new System.EventHandler(this.registerBtn_Click);
-            // 
-            // alertLabel
-            // 
-            this.alertLabel.AutoSize = true;
-            this.alertLabel.Location = new System.Drawing.Point(216, 420);
-            this.alertLabel.Name = "alertLabel";
-            this.alertLabel.Size = new System.Drawing.Size(0, 20);
-            this.alertLabel.TabIndex = 9;
-            this.alertLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
-            this.ClientSize = new System.Drawing.Size(755, 527);
+            this.ClientSize = new System.Drawing.Size(755, 416);
             this.Controls.Add(this.RegisterPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Register";

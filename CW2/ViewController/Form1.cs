@@ -17,23 +17,23 @@ namespace CW2
         {
             InitializeComponent();           
         }
-        User newUsr = new User();
+        UserDetails newUsr = new UserDetails();
+        UserModel userModel = new UserModel();
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            if(this.userNameTxtBox.Text.Equals("Sayan") && this.passwordTextBox1.Text.Equals("123"))
-                {
-                    
-                    this.newUsr.userName = this.userNameTxtBox.Text;
+            this.newUsr.UserName = this.userNameTxtBox.Text;
+            this.newUsr.Password = this.passwordTextBox1.Text;
+            if(userModel.LoginUser(newUsr).Equals("exist"))
+            {
                     Main rg = new Main();
                     rg.newUser = this.newUsr;
                     this.Hide();
                     rg.Activate();
                     rg.Show();
-
             }
             else
             {
-                MessageBox.Show(this.userNameTxtBox.Text +""+ this.passwordTextBox1.Text);
+                MessageBox.Show(userModel.LoginUser(newUsr),"Alert");
             }
         }
 
