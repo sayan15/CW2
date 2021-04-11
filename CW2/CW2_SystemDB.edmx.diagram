@@ -12,7 +12,7 @@
         <AssociationConnector Association="CW2_SystemDB.UserPayerOrPayee" />
         <AssociationConnector Association="CW2_SystemDB.UserEvent" />
         <AssociationConnector Association="CW2_SystemDB.UserTransaction" />
-        <AssociationConnector Association="CW2_SystemDB.TransactionPayerOrPayee" />
+        <AssociationConnector Association="CW2_SystemDB.PayerOrPayeeTransaction" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

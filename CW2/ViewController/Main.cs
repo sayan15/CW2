@@ -27,6 +27,7 @@ namespace CW2.ViewController
         private void addTransactionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddTransaction ad = new AddTransaction();
+            ad.userDetails = newUser;
             ad.Activate();
             ad.ShowDialog();
         }
@@ -41,20 +42,25 @@ namespace CW2.ViewController
         private void addEventToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddEvent addEvent = new AddEvent();
+            addEvent.details = newUser;
+            addEvent.getDataEventXML();
             addEvent.Activate();
             addEvent.ShowDialog();
         }
 
         private void viewEditToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            EditEvent editevent = new EditEvent();
-            editevent.Activate();
-            editevent.ShowDialog();
+            ViewEvents viewevent = new ViewEvents();
+            viewevent.details = newUser;
+            viewevent.Activate();
+            viewevent.ShowDialog();
         }
 
         private void addDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddPayeeOrPayer addPayeeorPayer = new AddPayeeOrPayer();
+            addPayeeorPayer.details = newUser;
+            addPayeeorPayer.getDataXML();
             addPayeeorPayer.Activate();
             addPayeeorPayer.ShowDialog();
         }
@@ -62,6 +68,7 @@ namespace CW2.ViewController
         private void viewEditToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             ViewPayerPayee viewPayerPayee = new ViewPayerPayee();
+            viewPayerPayee.details = newUser;
             viewPayerPayee.Activate();
             viewPayerPayee.ShowDialog();
         }

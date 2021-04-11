@@ -70,14 +70,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CW2_SystemDB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="CW2_SystemDB1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CW2_SystemDB.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Event.cs">
       <DependentUpon>CW2_SystemDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="EventModel.cs" />
     <Compile Include="PayerOrPayee.cs">
       <DependentUpon>CW2_SystemDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="PayerOrPayeeModel.cs" />
+    <Compile Include="PayerPayeeList.cs" />
     <Compile Include="Transaction.cs">
       <DependentUpon>CW2_SystemDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TypeRadioButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TypeRadioButton.Designer.cs">
+      <DependentUpon>TypeRadioButton.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
       <DependentUpon>CW2_SystemDB.tt</DependentUpon>
@@ -107,6 +121,12 @@
     </Compile>
     <Compile Include="ViewController\EditEvent.Designer.cs">
       <DependentUpon>EditEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController\EditPayerOrPayee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewController\EditPayerOrPayee.Designer.cs">
+      <DependentUpon>EditPayerOrPayee.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewController\EditTransaction.cs">
       <SubType>Form</SubType>
@@ -140,12 +160,21 @@
     <Compile Include="ViewController\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewController\ViewEvents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewController\ViewEvents.Designer.cs">
+      <DependentUpon>ViewEvents.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewController\ViewPayerPayee.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ViewController\ViewPayerPayee.Designer.cs">
       <DependentUpon>ViewPayerPayee.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TypeRadioButton.resx">
+      <DependentUpon>TypeRadioButton.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewController\AddEvent.resx">
       <DependentUpon>AddEvent.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewController\EditEvent.resx">
       <DependentUpon>EditEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewController\EditPayerOrPayee.resx">
+      <DependentUpon>EditPayerOrPayee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewController\EditTransaction.resx">
       <DependentUpon>EditTransaction.cs</DependentUpon>
@@ -183,6 +215,9 @@
     <EmbeddedResource Include="ViewController\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewController\ViewEvents.resx">
+      <DependentUpon>ViewEvents.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewController\ViewPayerPayee.resx">
       <DependentUpon>ViewPayerPayee.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +227,17 @@
     </EntityDeploy>
     <None Include="CW2_SystemDB.edmx.diagram">
       <DependentUpon>CW2_SystemDB.edmx</DependentUpon>
+    </None>
+    <None Include="CW2_SystemDB.xsc">
+      <DependentUpon>CW2_SystemDB.xsd</DependentUpon>
+    </None>
+    <None Include="CW2_SystemDB.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CW2_SystemDB1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CW2_SystemDB.xss">
+      <DependentUpon>CW2_SystemDB.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

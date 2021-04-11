@@ -22,9 +22,9 @@
       <End Role="User" EntitySet="Users" />
       <End Role="Transaction" EntitySet="Transactions" />
     </AssociationSet>
-    <AssociationSet Name="TransactionPayerOrPayee" Association="CW2_SystemDB.Store.TransactionPayerOrPayee">
-      <End Role="Transaction" EntitySet="Transactions" />
+    <AssociationSet Name="PayerOrPayeeTransaction" Association="CW2_SystemDB.Store.PayerOrPayeeTransaction">
       <End Role="PayerOrPayee" EntitySet="PayerOrPayees" />
+      <End Role="Transaction" EntitySet="Transactions" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="PayerOrPayees">
@@ -49,7 +49,8 @@
     <Property Name="Date" Type="datetime" Nullable="false" />
     <Property Name="Amount" Type="float" Nullable="false" />
     <Property Name="UserId" Type="int" Nullable="false" />
-    <Property Name="PayerOrPayee_Id" Type="int" Nullable="false" />
+    <Property Name="PayerOrPayeeId" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
   </EntityType>
   <EntityType Name="Events">
     <Key>
@@ -107,15 +108,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="TransactionPayerOrPayee">
-    <End Role="Transaction" Type="CW2_SystemDB.Store.Transactions" Multiplicity="*" />
+  <Association Name="PayerOrPayeeTransaction">
     <End Role="PayerOrPayee" Type="CW2_SystemDB.Store.PayerOrPayees" Multiplicity="1" />
+    <End Role="Transaction" Type="CW2_SystemDB.Store.Transactions" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="PayerOrPayee">
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Transaction">
-        <PropertyRef Name="PayerOrPayee_Id" />
+        <PropertyRef Name="PayerOrPayeeId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -140,9 +141,9 @@
             <End Role="User" EntitySet="Users" />
             <End Role="Transaction" EntitySet="Transactions" />
           </AssociationSet>
-          <AssociationSet Name="TransactionPayerOrPayee" Association="CW2_SystemDB.TransactionPayerOrPayee">
-            <End Role="Transaction" EntitySet="Transactions" />
+          <AssociationSet Name="PayerOrPayeeTransaction" Association="CW2_SystemDB.PayerOrPayeeTransaction">
             <End Role="PayerOrPayee" EntitySet="PayerOrPayees" />
+            <End Role="Transaction" EntitySet="Transactions" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="User">
@@ -178,7 +179,9 @@
           <Property Name="Amount" Type="Double" Nullable="false" />
           <NavigationProperty Name="User" Relationship="CW2_SystemDB.UserTransaction" FromRole="Transaction" ToRole="User" />
           <Property Name="UserId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="PayerOrPayee" Relationship="CW2_SystemDB.TransactionPayerOrPayee" FromRole="Transaction" ToRole="PayerOrPayee" />
+          <NavigationProperty Name="PayerOrPayee" Relationship="CW2_SystemDB.PayerOrPayeeTransaction" FromRole="Transaction" ToRole="PayerOrPayee" />
+          <Property Name="PayerOrPayeeId" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="true" />
         </EntityType>
         <EntityType Name="Event">
           <Key>
@@ -228,9 +231,17 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="TransactionPayerOrPayee">
-          <End Type="CW2_SystemDB.Transaction" Role="Transaction" Multiplicity="1" />
+        <Association Name="PayerOrPayeeTransaction">
           <End Type="CW2_SystemDB.PayerOrPayee" Role="PayerOrPayee" Multiplicity="1" />
+          <End Type="CW2_SystemDB.Transaction" Role="Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PayerOrPayee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="PayerOrPayeeId" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -260,6 +271,8 @@
           <ScalarProperty Name="Date" ColumnName="Date" />
           <ScalarProperty Name="Amount" ColumnName="Amount" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PayerOrPayeeId" ColumnName="PayerOrPayeeId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -285,14 +298,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="TransactionPayerOrPayee" TypeName="CW2_SystemDB.TransactionPayerOrPayee" StoreEntitySet="Transactions">
-      <EndProperty Name="PayerOrPayee">
-        <ScalarProperty Name="Id" ColumnName="PayerOrPayee_Id" />
-      </EndProperty>
-      <EndProperty Name="Transaction">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>

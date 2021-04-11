@@ -43,7 +43,7 @@ namespace CW2
             }
             return "Succesfully Added";
         }
-        public string LoginUser(UserDetails info)
+        public String LoginUser(UserDetails info)
         {
             try
             {
@@ -65,6 +65,30 @@ namespace CW2
                 return e.Message;
             }
                 return "UserName or Password is Incorrect";
+        }
+
+        public int GetID(UserDetails info)
+        {
+            try
+            {
+                CW2_SystemDBContainer db = new CW2_SystemDBContainer();
+                var usr = db.Users
+                 .Where(s => s.UserName == info.UserName && s.Password == info.Password)
+                 .FirstOrDefault<User>();
+                if (usr != null)
+                {
+                    return usr.Id;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
+            return 0;
         }
     }
 }

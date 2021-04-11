@@ -30,34 +30,32 @@ namespace CW2.ViewController
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.occurenceTypeRadBtn = new CW2.TypeRadioButton();
+            this.eventDeleteBtn = new System.Windows.Forms.Button();
+            this.eventUpdateBtn = new System.Windows.Forms.Button();
+            this.evntIDTxtBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.eventDescTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.eventTransactionDate = new System.Windows.Forms.DateTimePicker();
-            this.eventoneTimeRadioButton1 = new System.Windows.Forms.RadioButton();
-            this.eventRecurranceRadioButton1 = new System.Windows.Forms.RadioButton();
+            this.eventDate = new System.Windows.Forms.DateTimePicker();
             this.appointRadioButton2 = new System.Windows.Forms.RadioButton();
             this.taskradioButton1 = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.evntTxtBox = new System.Windows.Forms.TextBox();
-            this.eventUpdateBtn = new System.Windows.Forms.Button();
-            this.eventDeleteBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.AliceBlue;
+            this.panel1.Controls.Add(this.occurenceTypeRadBtn);
             this.panel1.Controls.Add(this.eventDeleteBtn);
             this.panel1.Controls.Add(this.eventUpdateBtn);
-            this.panel1.Controls.Add(this.evntTxtBox);
+            this.panel1.Controls.Add(this.evntIDTxtBox);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.eventDescTextBox1);
-            this.panel1.Controls.Add(this.eventTransactionDate);
-            this.panel1.Controls.Add(this.eventoneTimeRadioButton1);
-            this.panel1.Controls.Add(this.eventRecurranceRadioButton1);
+            this.panel1.Controls.Add(this.eventDate);
             this.panel1.Controls.Add(this.appointRadioButton2);
             this.panel1.Controls.Add(this.taskradioButton1);
             this.panel1.Controls.Add(this.label5);
@@ -69,47 +67,76 @@ namespace CW2.ViewController
             this.panel1.Size = new System.Drawing.Size(682, 544);
             this.panel1.TabIndex = 0;
             // 
+            // occurenceTypeRadBtn
+            // 
+            this.occurenceTypeRadBtn.BackColor = System.Drawing.Color.AliceBlue;
+            this.occurenceTypeRadBtn.Location = new System.Drawing.Point(342, 157);
+            this.occurenceTypeRadBtn.Name = "occurenceTypeRadBtn";
+            this.occurenceTypeRadBtn.OneTime = false;
+            this.occurenceTypeRadBtn.Repeat = false;
+            this.occurenceTypeRadBtn.Size = new System.Drawing.Size(265, 58);
+            this.occurenceTypeRadBtn.TabIndex = 33;
+            // 
+            // eventDeleteBtn
+            // 
+            this.eventDeleteBtn.BackColor = System.Drawing.Color.Silver;
+            this.eventDeleteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.eventDeleteBtn.Location = new System.Drawing.Point(354, 452);
+            this.eventDeleteBtn.Name = "eventDeleteBtn";
+            this.eventDeleteBtn.Size = new System.Drawing.Size(75, 32);
+            this.eventDeleteBtn.TabIndex = 32;
+            this.eventDeleteBtn.Text = "Delete";
+            this.eventDeleteBtn.UseVisualStyleBackColor = false;
+            this.eventDeleteBtn.Click += new System.EventHandler(this.eventDeleteBtn_Click);
+            // 
+            // eventUpdateBtn
+            // 
+            this.eventUpdateBtn.BackColor = System.Drawing.Color.Silver;
+            this.eventUpdateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.eventUpdateBtn.Location = new System.Drawing.Point(211, 452);
+            this.eventUpdateBtn.Name = "eventUpdateBtn";
+            this.eventUpdateBtn.Size = new System.Drawing.Size(75, 32);
+            this.eventUpdateBtn.TabIndex = 31;
+            this.eventUpdateBtn.Text = "Update";
+            this.eventUpdateBtn.UseVisualStyleBackColor = false;
+            this.eventUpdateBtn.Click += new System.EventHandler(this.eventUpdateBtn_Click);
+            // 
+            // evntIDTxtBox
+            // 
+            this.evntIDTxtBox.Location = new System.Drawing.Point(342, 46);
+            this.evntIDTxtBox.Name = "evntIDTxtBox";
+            this.evntIDTxtBox.ReadOnly = true;
+            this.evntIDTxtBox.Size = new System.Drawing.Size(265, 26);
+            this.evntIDTxtBox.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(124, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 20);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "EventId";
+            // 
             // eventDescTextBox1
             // 
             this.eventDescTextBox1.Location = new System.Drawing.Point(342, 297);
             this.eventDescTextBox1.Name = "eventDescTextBox1";
-            this.eventDescTextBox1.Size = new System.Drawing.Size(200, 96);
+            this.eventDescTextBox1.Size = new System.Drawing.Size(265, 96);
             this.eventDescTextBox1.TabIndex = 7;
             this.eventDescTextBox1.Text = "";
             // 
-            // eventTransactionDate
+            // eventDate
             // 
-            this.eventTransactionDate.Location = new System.Drawing.Point(342, 232);
-            this.eventTransactionDate.Name = "eventTransactionDate";
-            this.eventTransactionDate.Size = new System.Drawing.Size(200, 26);
-            this.eventTransactionDate.TabIndex = 6;
-            // 
-            // eventoneTimeRadioButton1
-            // 
-            this.eventoneTimeRadioButton1.AutoSize = true;
-            this.eventoneTimeRadioButton1.Location = new System.Drawing.Point(455, 173);
-            this.eventoneTimeRadioButton1.Name = "eventoneTimeRadioButton1";
-            this.eventoneTimeRadioButton1.Size = new System.Drawing.Size(98, 24);
-            this.eventoneTimeRadioButton1.TabIndex = 5;
-            this.eventoneTimeRadioButton1.TabStop = true;
-            this.eventoneTimeRadioButton1.Text = "OneTime";
-            this.eventoneTimeRadioButton1.UseVisualStyleBackColor = true;
-            // 
-            // eventRecurranceRadioButton1
-            // 
-            this.eventRecurranceRadioButton1.AutoSize = true;
-            this.eventRecurranceRadioButton1.Location = new System.Drawing.Point(342, 173);
-            this.eventRecurranceRadioButton1.Name = "eventRecurranceRadioButton1";
-            this.eventRecurranceRadioButton1.Size = new System.Drawing.Size(87, 24);
-            this.eventRecurranceRadioButton1.TabIndex = 4;
-            this.eventRecurranceRadioButton1.TabStop = true;
-            this.eventRecurranceRadioButton1.Text = "Repeat";
-            this.eventRecurranceRadioButton1.UseVisualStyleBackColor = true;
+            this.eventDate.Location = new System.Drawing.Point(342, 232);
+            this.eventDate.Name = "eventDate";
+            this.eventDate.Size = new System.Drawing.Size(265, 26);
+            this.eventDate.TabIndex = 6;
             // 
             // appointRadioButton2
             // 
             this.appointRadioButton2.AutoSize = true;
-            this.appointRadioButton2.Location = new System.Drawing.Point(455, 109);
+            this.appointRadioButton2.Location = new System.Drawing.Point(493, 107);
             this.appointRadioButton2.Name = "appointRadioButton2";
             this.appointRadioButton2.Size = new System.Drawing.Size(125, 24);
             this.appointRadioButton2.TabIndex = 3;
@@ -164,45 +191,6 @@ namespace CW2.ViewController
             this.label2.TabIndex = 20;
             this.label2.Text = "Event Type";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(124, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 20);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "EventId";
-            // 
-            // evntTxtBox
-            // 
-            this.evntTxtBox.Location = new System.Drawing.Point(342, 46);
-            this.evntTxtBox.Name = "evntTxtBox";
-            this.evntTxtBox.ReadOnly = true;
-            this.evntTxtBox.Size = new System.Drawing.Size(200, 26);
-            this.evntTxtBox.TabIndex = 1;
-            // 
-            // eventUpdateBtn
-            // 
-            this.eventUpdateBtn.BackColor = System.Drawing.Color.Silver;
-            this.eventUpdateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.eventUpdateBtn.Location = new System.Drawing.Point(211, 452);
-            this.eventUpdateBtn.Name = "eventUpdateBtn";
-            this.eventUpdateBtn.Size = new System.Drawing.Size(75, 32);
-            this.eventUpdateBtn.TabIndex = 31;
-            this.eventUpdateBtn.Text = "Update";
-            this.eventUpdateBtn.UseVisualStyleBackColor = false;
-            // 
-            // eventDeleteBtn
-            // 
-            this.eventDeleteBtn.BackColor = System.Drawing.Color.Silver;
-            this.eventDeleteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.eventDeleteBtn.Location = new System.Drawing.Point(354, 452);
-            this.eventDeleteBtn.Name = "eventDeleteBtn";
-            this.eventDeleteBtn.Size = new System.Drawing.Size(75, 32);
-            this.eventDeleteBtn.TabIndex = 32;
-            this.eventDeleteBtn.Text = "Delete";
-            this.eventDeleteBtn.UseVisualStyleBackColor = false;
-            // 
             // EditEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -221,12 +209,10 @@ namespace CW2.ViewController
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox evntTxtBox;
+        private System.Windows.Forms.TextBox evntIDTxtBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox eventDescTextBox1;
-        private System.Windows.Forms.DateTimePicker eventTransactionDate;
-        private System.Windows.Forms.RadioButton eventoneTimeRadioButton1;
-        private System.Windows.Forms.RadioButton eventRecurranceRadioButton1;
+        private System.Windows.Forms.DateTimePicker eventDate;
         private System.Windows.Forms.RadioButton appointRadioButton2;
         private System.Windows.Forms.RadioButton taskradioButton1;
         private System.Windows.Forms.Label label5;
@@ -235,5 +221,6 @@ namespace CW2.ViewController
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button eventUpdateBtn;
         private System.Windows.Forms.Button eventDeleteBtn;
+        private TypeRadioButton occurenceTypeRadBtn;
     }
 }

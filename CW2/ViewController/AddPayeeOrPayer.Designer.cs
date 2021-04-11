@@ -38,9 +38,10 @@ namespace CW2.ViewController
             this.mailtextBox1 = new System.Windows.Forms.TextBox();
             this.phonetextBox1 = new System.Windows.Forms.TextBox();
             this.addressRichTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.payer = new System.Windows.Forms.RadioButton();
-            this.payee = new System.Windows.Forms.RadioButton();
+            this.payerRadioBtn = new System.Windows.Forms.RadioButton();
+            this.payeeRadioBtn = new System.Windows.Forms.RadioButton();
             this.payerAddbutton1 = new System.Windows.Forms.Button();
+            this.alertLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -117,27 +118,27 @@ namespace CW2.ViewController
             this.addressRichTextBox1.TabIndex = 8;
             this.addressRichTextBox1.Text = "";
             // 
-            // payer
+            // payerRadioBtn
             // 
-            this.payer.AutoSize = true;
-            this.payer.Location = new System.Drawing.Point(502, 398);
-            this.payer.Name = "payer";
-            this.payer.Size = new System.Drawing.Size(74, 24);
-            this.payer.TabIndex = 10;
-            this.payer.TabStop = true;
-            this.payer.Text = "Payer";
-            this.payer.UseVisualStyleBackColor = true;
+            this.payerRadioBtn.AutoSize = true;
+            this.payerRadioBtn.Location = new System.Drawing.Point(502, 398);
+            this.payerRadioBtn.Name = "payerRadioBtn";
+            this.payerRadioBtn.Size = new System.Drawing.Size(74, 24);
+            this.payerRadioBtn.TabIndex = 10;
+            this.payerRadioBtn.Text = "Payer";
+            this.payerRadioBtn.UseVisualStyleBackColor = true;
             // 
-            // payee
+            // payeeRadioBtn
             // 
-            this.payee.AutoSize = true;
-            this.payee.Location = new System.Drawing.Point(376, 398);
-            this.payee.Name = "payee";
-            this.payee.Size = new System.Drawing.Size(78, 24);
-            this.payee.TabIndex = 9;
-            this.payee.TabStop = true;
-            this.payee.Text = "Payee";
-            this.payee.UseVisualStyleBackColor = true;
+            this.payeeRadioBtn.AutoSize = true;
+            this.payeeRadioBtn.Checked = true;
+            this.payeeRadioBtn.Location = new System.Drawing.Point(376, 398);
+            this.payeeRadioBtn.Name = "payeeRadioBtn";
+            this.payeeRadioBtn.Size = new System.Drawing.Size(78, 24);
+            this.payeeRadioBtn.TabIndex = 9;
+            this.payeeRadioBtn.TabStop = true;
+            this.payeeRadioBtn.Text = "Payee";
+            this.payeeRadioBtn.UseVisualStyleBackColor = true;
             // 
             // payerAddbutton1
             // 
@@ -148,6 +149,16 @@ namespace CW2.ViewController
             this.payerAddbutton1.TabIndex = 11;
             this.payerAddbutton1.Text = "Add";
             this.payerAddbutton1.UseVisualStyleBackColor = false;
+            this.payerAddbutton1.Click += new System.EventHandler(this.payerAddbutton1_Click);
+            // 
+            // alertLabel
+            // 
+            this.alertLabel.AutoSize = true;
+            this.alertLabel.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.alertLabel.Location = new System.Drawing.Point(12, 9);
+            this.alertLabel.Name = "alertLabel";
+            this.alertLabel.Size = new System.Drawing.Size(0, 23);
+            this.alertLabel.TabIndex = 12;
             // 
             // AddPayeeOrPayer
             // 
@@ -155,9 +166,10 @@ namespace CW2.ViewController
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(701, 617);
+            this.Controls.Add(this.alertLabel);
             this.Controls.Add(this.payerAddbutton1);
-            this.Controls.Add(this.payer);
-            this.Controls.Add(this.payee);
+            this.Controls.Add(this.payerRadioBtn);
+            this.Controls.Add(this.payeeRadioBtn);
             this.Controls.Add(this.addressRichTextBox1);
             this.Controls.Add(this.phonetextBox1);
             this.Controls.Add(this.mailtextBox1);
@@ -167,8 +179,9 @@ namespace CW2.ViewController
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "AddPayeeOrPayer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddPayeeOrPayer";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -186,8 +199,9 @@ namespace CW2.ViewController
         private System.Windows.Forms.TextBox mailtextBox1;
         private System.Windows.Forms.TextBox phonetextBox1;
         private System.Windows.Forms.RichTextBox addressRichTextBox1;
-        private System.Windows.Forms.RadioButton payer;
-        private System.Windows.Forms.RadioButton payee;
+        private System.Windows.Forms.RadioButton payerRadioBtn;
+        private System.Windows.Forms.RadioButton payeeRadioBtn;
         private System.Windows.Forms.Button payerAddbutton1;
+        private System.Windows.Forms.Label alertLabel;
     }
 }

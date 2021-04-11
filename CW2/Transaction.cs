@@ -20,6 +20,8 @@ namespace CW2
         public System.DateTime Date { get; set; }
         public double Amount { get; set; }
         public int UserId { get; set; }
+        public int PayerOrPayeeId { get; set; }
+        public string Description { get; set; }
     
         public virtual User User { get; set; }
         public virtual PayerOrPayee PayerOrPayee { get; set; }

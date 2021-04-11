@@ -26,6 +26,7 @@ namespace CW2
             if(userModel.LoginUser(newUsr).Equals("exist"))
             {
                     Main rg = new Main();
+                    newUsr.Id = userModel.GetID(newUsr);
                     rg.newUser = this.newUsr;
                     this.Hide();
                     rg.Activate();

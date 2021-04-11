@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/06/2021 20:51:04
+-- Date Created: 04/11/2021 14:32:57
 -- Generated from EDMX file: D:\Masters_IIT_Modules\EnterprsieSytemDesign\CW2\CW2\CW2_SystemDB.edmx
 -- --------------------------------------------------
 
@@ -17,17 +17,17 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_UserDetailsPayerOrPayee]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[PayerOrPayees] DROP CONSTRAINT [FK_UserDetailsPayerOrPayee];
+IF OBJECT_ID(N'[dbo].[FK_UserPayerOrPayee]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PayerOrPayees] DROP CONSTRAINT [FK_UserPayerOrPayee];
 GO
-IF OBJECT_ID(N'[dbo].[FK_UserDetailsEvent]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Events] DROP CONSTRAINT [FK_UserDetailsEvent];
+IF OBJECT_ID(N'[dbo].[FK_UserEvent]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Events] DROP CONSTRAINT [FK_UserEvent];
 GO
-IF OBJECT_ID(N'[dbo].[FK_UserDetailsTransaction]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Transactions] DROP CONSTRAINT [FK_UserDetailsTransaction];
+IF OBJECT_ID(N'[dbo].[FK_UserTransaction]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Transactions] DROP CONSTRAINT [FK_UserTransaction];
 GO
-IF OBJECT_ID(N'[dbo].[FK_TransactionPayerOrPayee]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Transactions] DROP CONSTRAINT [FK_TransactionPayerOrPayee];
+IF OBJECT_ID(N'[dbo].[FK_PayerOrPayeeTransaction]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Transactions] DROP CONSTRAINT [FK_PayerOrPayeeTransaction];
 GO
 
 -- --------------------------------------------------
@@ -43,8 +43,8 @@ GO
 IF OBJECT_ID(N'[dbo].[Events]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Events];
 GO
-IF OBJECT_ID(N'[dbo].[UserDetails]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[UserDetails];
+IF OBJECT_ID(N'[dbo].[Users]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Users];
 GO
 
 -- --------------------------------------------------
@@ -71,7 +71,8 @@ CREATE TABLE [dbo].[Transactions] (
     [Date] datetime  NOT NULL,
     [Amount] float  NOT NULL,
     [UserId] int  NOT NULL,
-    [PayerOrPayee_Id] int  NOT NULL
+    [PayerOrPayeeId] int  NOT NULL,
+    [Description] nvarchar(max)  NULL
 );
 GO
 
@@ -172,19 +173,19 @@ ON [dbo].[Transactions]
     ([UserId]);
 GO
 
--- Creating foreign key on [PayerOrPayee_Id] in table 'Transactions'
+-- Creating foreign key on [PayerOrPayeeId] in table 'Transactions'
 ALTER TABLE [dbo].[Transactions]
-ADD CONSTRAINT [FK_TransactionPayerOrPayee]
-    FOREIGN KEY ([PayerOrPayee_Id])
+ADD CONSTRAINT [FK_PayerOrPayeeTransaction]
+    FOREIGN KEY ([PayerOrPayeeId])
     REFERENCES [dbo].[PayerOrPayees]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_TransactionPayerOrPayee'
-CREATE INDEX [IX_FK_TransactionPayerOrPayee]
+-- Creating non-clustered index for FOREIGN KEY 'FK_PayerOrPayeeTransaction'
+CREATE INDEX [IX_FK_PayerOrPayeeTransaction]
 ON [dbo].[Transactions]
-    ([PayerOrPayee_Id]);
+    ([PayerOrPayeeId]);
 GO
 
 -- --------------------------------------------------

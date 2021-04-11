@@ -30,28 +30,28 @@ namespace CW2.ViewController
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.typeRadioButton1 = new CW2.TypeRadioButton();
+            this.saveBtn = new System.Windows.Forms.Button();
+            this.eventDescTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.eventTransactionDate = new System.Windows.Forms.DateTimePicker();
             this.appointRadioButton2 = new System.Windows.Forms.RadioButton();
             this.taskradioButton1 = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.eventoneTimeRadioButton1 = new System.Windows.Forms.RadioButton();
-            this.eventRecurranceRadioButton1 = new System.Windows.Forms.RadioButton();
-            this.eventTransactionDate = new System.Windows.Forms.DateTimePicker();
-            this.eventDescTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.saveBtn = new System.Windows.Forms.Button();
+            this.alertLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.AliceBlue;
+            this.panel1.Controls.Add(this.alertLabel);
+            this.panel1.Controls.Add(this.typeRadioButton1);
             this.panel1.Controls.Add(this.saveBtn);
             this.panel1.Controls.Add(this.eventDescTextBox1);
             this.panel1.Controls.Add(this.eventTransactionDate);
-            this.panel1.Controls.Add(this.eventoneTimeRadioButton1);
-            this.panel1.Controls.Add(this.eventRecurranceRadioButton1);
             this.panel1.Controls.Add(this.appointRadioButton2);
             this.panel1.Controls.Add(this.taskradioButton1);
             this.panel1.Controls.Add(this.label5);
@@ -63,20 +63,57 @@ namespace CW2.ViewController
             this.panel1.Size = new System.Drawing.Size(805, 515);
             this.panel1.TabIndex = 0;
             // 
+            // typeRadioButton1
+            // 
+            this.typeRadioButton1.BackColor = System.Drawing.Color.AliceBlue;
+            this.typeRadioButton1.Location = new System.Drawing.Point(388, 102);
+            this.typeRadioButton1.Name = "typeRadioButton1";
+            this.typeRadioButton1.OneTime = false;
+            this.typeRadioButton1.Repeat = false;
+            this.typeRadioButton1.Size = new System.Drawing.Size(265, 58);
+            this.typeRadioButton1.TabIndex = 21;
+            // 
+            // saveBtn
+            // 
+            this.saveBtn.BackColor = System.Drawing.Color.Silver;
+            this.saveBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.saveBtn.Location = new System.Drawing.Point(333, 409);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(75, 34);
+            this.saveBtn.TabIndex = 20;
+            this.saveBtn.Text = "Save";
+            this.saveBtn.UseVisualStyleBackColor = false;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            // 
+            // eventDescTextBox1
+            // 
+            this.eventDescTextBox1.Location = new System.Drawing.Point(388, 245);
+            this.eventDescTextBox1.Name = "eventDescTextBox1";
+            this.eventDescTextBox1.Size = new System.Drawing.Size(200, 96);
+            this.eventDescTextBox1.TabIndex = 19;
+            this.eventDescTextBox1.Text = "";
+            // 
+            // eventTransactionDate
+            // 
+            this.eventTransactionDate.Location = new System.Drawing.Point(388, 180);
+            this.eventTransactionDate.Name = "eventTransactionDate";
+            this.eventTransactionDate.Size = new System.Drawing.Size(200, 26);
+            this.eventTransactionDate.TabIndex = 18;
+            // 
             // appointRadioButton2
             // 
             this.appointRadioButton2.AutoSize = true;
-            this.appointRadioButton2.Location = new System.Drawing.Point(501, 57);
+            this.appointRadioButton2.Location = new System.Drawing.Point(540, 57);
             this.appointRadioButton2.Name = "appointRadioButton2";
             this.appointRadioButton2.Size = new System.Drawing.Size(125, 24);
             this.appointRadioButton2.TabIndex = 6;
-            this.appointRadioButton2.TabStop = true;
             this.appointRadioButton2.Text = "Appointment";
             this.appointRadioButton2.UseVisualStyleBackColor = true;
             // 
             // taskradioButton1
             // 
             this.taskradioButton1.AutoSize = true;
+            this.taskradioButton1.Checked = true;
             this.taskradioButton1.Location = new System.Drawing.Point(388, 57);
             this.taskradioButton1.Name = "taskradioButton1";
             this.taskradioButton1.Size = new System.Drawing.Size(68, 24);
@@ -121,53 +158,13 @@ namespace CW2.ViewController
             this.label2.TabIndex = 1;
             this.label2.Text = "Event Type";
             // 
-            // eventoneTimeRadioButton1
+            // alertLabel
             // 
-            this.eventoneTimeRadioButton1.AutoSize = true;
-            this.eventoneTimeRadioButton1.Location = new System.Drawing.Point(501, 121);
-            this.eventoneTimeRadioButton1.Name = "eventoneTimeRadioButton1";
-            this.eventoneTimeRadioButton1.Size = new System.Drawing.Size(98, 24);
-            this.eventoneTimeRadioButton1.TabIndex = 17;
-            this.eventoneTimeRadioButton1.TabStop = true;
-            this.eventoneTimeRadioButton1.Text = "OneTime";
-            this.eventoneTimeRadioButton1.UseVisualStyleBackColor = true;
-            // 
-            // eventRecurranceRadioButton1
-            // 
-            this.eventRecurranceRadioButton1.AutoSize = true;
-            this.eventRecurranceRadioButton1.Location = new System.Drawing.Point(388, 121);
-            this.eventRecurranceRadioButton1.Name = "eventRecurranceRadioButton1";
-            this.eventRecurranceRadioButton1.Size = new System.Drawing.Size(87, 24);
-            this.eventRecurranceRadioButton1.TabIndex = 16;
-            this.eventRecurranceRadioButton1.TabStop = true;
-            this.eventRecurranceRadioButton1.Text = "Repeat";
-            this.eventRecurranceRadioButton1.UseVisualStyleBackColor = true;
-            // 
-            // eventTransactionDate
-            // 
-            this.eventTransactionDate.Location = new System.Drawing.Point(388, 180);
-            this.eventTransactionDate.Name = "eventTransactionDate";
-            this.eventTransactionDate.Size = new System.Drawing.Size(200, 26);
-            this.eventTransactionDate.TabIndex = 18;
-            // 
-            // eventDescTextBox1
-            // 
-            this.eventDescTextBox1.Location = new System.Drawing.Point(388, 245);
-            this.eventDescTextBox1.Name = "eventDescTextBox1";
-            this.eventDescTextBox1.Size = new System.Drawing.Size(200, 96);
-            this.eventDescTextBox1.TabIndex = 19;
-            this.eventDescTextBox1.Text = "";
-            // 
-            // saveBtn
-            // 
-            this.saveBtn.BackColor = System.Drawing.Color.Silver;
-            this.saveBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.saveBtn.Location = new System.Drawing.Point(333, 409);
-            this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(75, 34);
-            this.saveBtn.TabIndex = 20;
-            this.saveBtn.Text = "Save";
-            this.saveBtn.UseVisualStyleBackColor = false;
+            this.alertLabel.AutoSize = true;
+            this.alertLabel.Location = new System.Drawing.Point(15, 11);
+            this.alertLabel.Name = "alertLabel";
+            this.alertLabel.Size = new System.Drawing.Size(0, 20);
+            this.alertLabel.TabIndex = 22;
             // 
             // AddEvent
             // 
@@ -193,10 +190,10 @@ namespace CW2.ViewController
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RadioButton appointRadioButton2;
         private System.Windows.Forms.RadioButton taskradioButton1;
-        private System.Windows.Forms.RadioButton eventoneTimeRadioButton1;
-        private System.Windows.Forms.RadioButton eventRecurranceRadioButton1;
         private System.Windows.Forms.DateTimePicker eventTransactionDate;
         private System.Windows.Forms.RichTextBox eventDescTextBox1;
         private System.Windows.Forms.Button saveBtn;
+        private TypeRadioButton typeRadioButton1;
+        private System.Windows.Forms.Label alertLabel;
     }
 }
