@@ -57,6 +57,8 @@ namespace CW2.ViewController
                     EventModel eventModel = new EventModel();
                     eventModel.StoreEvent(dataset);
                     LabelSetter("Succesfully Added");
+                    File.Delete("Events.xml");
+                    
                 }
                 catch(Exception m)
                 {
@@ -107,7 +109,6 @@ namespace CW2.ViewController
             this.alertLabel.Text = text;
             if (text.Equals("Succesfully Added"))
             {
-                File.Delete("Events.xml");
                 this.alertLabel.BackColor = System.Drawing.Color.Green;
                 this.eventDescTextBox1.Text = "";
             }

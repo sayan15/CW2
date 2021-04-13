@@ -48,7 +48,7 @@ namespace CW2.ViewController
             this.transactionTypegroupBox1 = new System.Windows.Forms.GroupBox();
             this.incomeRadioButton1 = new System.Windows.Forms.RadioButton();
             this.expenseRadioButton1 = new System.Windows.Forms.RadioButton();
-            this.transactionTypeRadioButton1 = new CW2.TypeRadioButton();
+            this.occurenceTypeRadioButton1 = new CW2.TypeRadioButton();
             this.panel1.SuspendLayout();
             this.transactionTypegroupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +60,7 @@ namespace CW2.ViewController
             this.panel1.Controls.Add(this.transactonTypeLbl);
             this.panel1.Controls.Add(this.alertLabel);
             this.panel1.Controls.Add(this.payerPayeeList);
-            this.panel1.Controls.Add(this.transactionTypeRadioButton1);
+            this.panel1.Controls.Add(this.occurenceTypeRadioButton1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.saveBtn);
             this.panel1.Controls.Add(this.descTextBox1);
@@ -81,7 +81,7 @@ namespace CW2.ViewController
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(163, 448);
+            this.label1.Location = new System.Drawing.Point(163, 404);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 20);
             this.label1.TabIndex = 13;
@@ -89,7 +89,7 @@ namespace CW2.ViewController
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(352, 648);
+            this.saveBtn.Location = new System.Drawing.Point(353, 610);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(75, 34);
             this.saveBtn.TabIndex = 12;
@@ -99,7 +99,7 @@ namespace CW2.ViewController
             // 
             // descTextBox1
             // 
-            this.descTextBox1.Location = new System.Drawing.Point(437, 538);
+            this.descTextBox1.Location = new System.Drawing.Point(437, 488);
             this.descTextBox1.Name = "descTextBox1";
             this.descTextBox1.Size = new System.Drawing.Size(239, 54);
             this.descTextBox1.TabIndex = 11;
@@ -107,7 +107,7 @@ namespace CW2.ViewController
             // 
             // transactionDate
             // 
-            this.transactionDate.Location = new System.Drawing.Point(437, 384);
+            this.transactionDate.Location = new System.Drawing.Point(438, 336);
             this.transactionDate.Name = "transactionDate";
             this.transactionDate.Size = new System.Drawing.Size(239, 26);
             this.transactionDate.TabIndex = 10;
@@ -144,7 +144,7 @@ namespace CW2.ViewController
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(163, 538);
+            this.label6.Location = new System.Drawing.Point(163, 488);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(89, 20);
             this.label6.TabIndex = 5;
@@ -153,7 +153,7 @@ namespace CW2.ViewController
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(163, 384);
+            this.label5.Location = new System.Drawing.Point(164, 336);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 20);
             this.label5.TabIndex = 4;
@@ -162,7 +162,7 @@ namespace CW2.ViewController
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(164, 252);
+            this.label4.Location = new System.Drawing.Point(163, 177);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 20);
             this.label4.TabIndex = 3;
@@ -190,7 +190,7 @@ namespace CW2.ViewController
             // 
             this.payerPayeeList.FormattingEnabled = true;
             this.payerPayeeList.ItemHeight = 20;
-            this.payerPayeeList.Location = new System.Drawing.Point(438, 252);
+            this.payerPayeeList.Location = new System.Drawing.Point(437, 177);
             this.payerPayeeList.Name = "payerPayeeList";
             this.payerPayeeList.Size = new System.Drawing.Size(239, 44);
             this.payerPayeeList.TabIndex = 15;
@@ -206,7 +206,7 @@ namespace CW2.ViewController
             // transactonTypeLbl
             // 
             this.transactonTypeLbl.AutoSize = true;
-            this.transactonTypeLbl.Location = new System.Drawing.Point(164, 176);
+            this.transactonTypeLbl.Location = new System.Drawing.Point(161, 261);
             this.transactonTypeLbl.Name = "transactonTypeLbl";
             this.transactonTypeLbl.Size = new System.Drawing.Size(126, 20);
             this.transactonTypeLbl.TabIndex = 17;
@@ -216,7 +216,7 @@ namespace CW2.ViewController
             // 
             this.transactionTypegroupBox1.Controls.Add(this.expenseRadioButton1);
             this.transactionTypegroupBox1.Controls.Add(this.incomeRadioButton1);
-            this.transactionTypegroupBox1.Location = new System.Drawing.Point(426, 151);
+            this.transactionTypegroupBox1.Location = new System.Drawing.Point(428, 238);
             this.transactionTypegroupBox1.Name = "transactionTypegroupBox1";
             this.transactionTypegroupBox1.Size = new System.Drawing.Size(322, 54);
             this.transactionTypegroupBox1.TabIndex = 18;
@@ -244,16 +244,16 @@ namespace CW2.ViewController
             this.expenseRadioButton1.Text = "Expense";
             this.expenseRadioButton1.UseVisualStyleBackColor = true;
             // 
-            // transactionTypeRadioButton1
+            // occurenceTypeRadioButton1
             // 
-            this.transactionTypeRadioButton1.BackColor = System.Drawing.Color.AliceBlue;
-            this.transactionTypeRadioButton1.ForeColor = System.Drawing.Color.Black;
-            this.transactionTypeRadioButton1.Location = new System.Drawing.Point(437, 432);
-            this.transactionTypeRadioButton1.Name = "transactionTypeRadioButton1";
-            this.transactionTypeRadioButton1.OneTime = false;
-            this.transactionTypeRadioButton1.Repeat = false;
-            this.transactionTypeRadioButton1.Size = new System.Drawing.Size(265, 54);
-            this.transactionTypeRadioButton1.TabIndex = 14;
+            this.occurenceTypeRadioButton1.BackColor = System.Drawing.Color.AliceBlue;
+            this.occurenceTypeRadioButton1.ForeColor = System.Drawing.Color.Black;
+            this.occurenceTypeRadioButton1.Location = new System.Drawing.Point(428, 388);
+            this.occurenceTypeRadioButton1.Name = "occurenceTypeRadioButton1";
+            this.occurenceTypeRadioButton1.OneTime = false;
+            this.occurenceTypeRadioButton1.Repeat = false;
+            this.occurenceTypeRadioButton1.Size = new System.Drawing.Size(265, 54);
+            this.occurenceTypeRadioButton1.TabIndex = 14;
             // 
             // AddTransaction
             // 
@@ -288,7 +288,7 @@ namespace CW2.ViewController
         private System.Windows.Forms.RichTextBox descTextBox1;
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Label label1;
-        private TypeRadioButton transactionTypeRadioButton1;
+        private TypeRadioButton occurenceTypeRadioButton1;
         private System.Windows.Forms.ListBox payerPayeeList;
         private System.Windows.Forms.Label alertLabel;
         private System.Windows.Forms.Label transactonTypeLbl;

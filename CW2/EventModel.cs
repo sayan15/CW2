@@ -60,6 +60,22 @@ namespace CW2
                 db.SaveChanges();
             }
         }
+
+        public List<Event> GetWeekDetails(UserDetails info, DateTime date)
+        {
+            DateTime addedDate = date.AddDays(7);
+            List<Event> list = new List<Event>();
+            CW2_SystemDBContainer db = new CW2_SystemDBContainer();
+            list = db.Events
+             .Where(s => s.UserId == info.Id 
+             &&((s.OccurenceType=="Repeat" && (s.Date.Day>=date.Day && s.Date.Day<= addedDate.Day))
+             || (s.Date.Day >= date.Day && s.Date.Day <= addedDate.Day))
+             )
+             .ToList();
+
+            return list;
+
+        }
     }
 
    

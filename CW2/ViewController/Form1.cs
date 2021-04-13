@@ -29,7 +29,10 @@ namespace CW2
                     newUsr.Id = userModel.GetID(newUsr);
                     rg.newUser = this.newUsr;
                     this.Hide();
+                    rg.WindowState = System.Windows.Forms.FormWindowState.Maximized;
                     rg.Activate();
+                    rg.loadWeekEvent();
+                    rg.loadDailyTransaction();
                     rg.Show();
             }
             else
@@ -42,6 +45,7 @@ namespace CW2
         private void closeBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+            System.Windows.Forms.Application.Exit();
         }
 
         private void register_Click(object sender, EventArgs e)
@@ -49,6 +53,10 @@ namespace CW2
             Register register = new Register();
             register.Activate();
             register.ShowDialog();
+        }
+        public void enableWindow()
+        {
+            this.Show();
         }
     }
 }

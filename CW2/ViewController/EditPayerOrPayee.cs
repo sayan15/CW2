@@ -22,12 +22,12 @@ namespace CW2.ViewController
         UserDetails userDetails= new UserDetails();
         public void PublishData()
         {
-                this.IdtextBox1.Text= (this.dataset.Tables[0].Rows[0]["Id"]).ToString();
-                 this.editNametextBox1.Text = (this.dataset.Tables[0].Rows[0]["Name"]).ToString();
-                this.editMailtextBox1.Text = (this.dataset.Tables[0].Rows[0]["Mail"]).ToString();
-                this.editPhonetextBox1.Text = (this.dataset.Tables[0].Rows[0]["PhoneNumber"]).ToString();
-                this.editAddressRichTextBox1.Text = (this.dataset.Tables[0].Rows[0]["Address"]).ToString();
-                if ((this.dataset.Tables[0].Rows[0]["Type"]).ToString().Equals("Payee"))
+                this.IdtextBox1.Text= (this.dataset.PayerOrPayees.Rows[0]["Id"]).ToString();
+                 this.editNametextBox1.Text = (this.dataset.PayerOrPayees.Rows[0]["Name"]).ToString();
+                this.editMailtextBox1.Text = (this.dataset.PayerOrPayees.Rows[0]["Mail"]).ToString();
+                this.editPhonetextBox1.Text = (this.dataset.PayerOrPayees.Rows[0]["PhoneNumber"]).ToString();
+                this.editAddressRichTextBox1.Text = (this.dataset.PayerOrPayees.Rows[0]["Address"]).ToString();
+                if ((this.dataset.PayerOrPayees.Rows[0]["Type"]).ToString().Equals("Payee"))
                  {
                     this.editPayeeRadioBtn.Checked = true;
                  }
@@ -35,7 +35,7 @@ namespace CW2.ViewController
                  {
                     this.editPayerRadioBtn.Checked = true;
                  }
-                userDetails.Id = Int32.Parse((this.dataset.Tables[0].Rows[0]["UserId"]).ToString());
+                userDetails.Id = Int32.Parse((this.dataset.PayerOrPayees.Rows[0]["UserId"]).ToString());
 
 
         }
@@ -132,35 +132,15 @@ namespace CW2.ViewController
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            dataset = new CW2_SystemDB();
-            CW2_SystemDB.PayerOrPayeesRow rows = this.dataset.PayerOrPayees.NewPayerOrPayeesRow();
-            rows.Name = this.editNametextBox1.Text;
-            rows.Mail = this.editMailtextBox1.Text;
-            rows.PhoneNumber = Int32.Parse(this.editPhonetextBox1.Text);
-            rows.Address = this.editAddressRichTextBox1.Text;
-            bool type = this.editPayeeRadioBtn.Checked;
-            if (type)
-            {
-                rows.Type = "Payee";
-            }
-            else
-            {
-                rows.Type = "Payer";
-            }
-            rows.Id = Int32.Parse(this.IdtextBox1.Text);
-            rows.UserId = userDetails.Id;
-
-            this.dataset.PayerOrPayees.AddPayerOrPayeesRow(rows);
-            this.dataset.AcceptChanges();
-
-            this.dataset.WriteXml("EditPayeeOrPayer.xml");
+            int id;
+            id = Int32.Parse(this.IdtextBox1.Text);
 
             //call PayeeOrPayerModel class
             PayerOrPayeeModel payerOrPayeeModel = new PayerOrPayeeModel();
 
             try
             {
-                payerOrPayeeModel.Update(dataset);
+                payerOrPayeeModel.Delete(id);
                 LabelSetter("Deleted Successfully");
                 this.editNametextBox1.Text="";
                 this.editMailtextBox1.Text="";

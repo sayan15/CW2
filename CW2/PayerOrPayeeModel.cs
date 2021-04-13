@@ -74,15 +74,14 @@ namespace CW2
             }
         }
 
-        public void Delete(CW2_SystemDB details)
+        public void Delete(int id)
         {
             CW2_SystemDBContainer db = new CW2_SystemDBContainer();
-            foreach (var x in details.PayerOrPayees)
-            {
-                PayerOrPayee payerOrPayee = db.PayerOrPayees.Single(c => c.Id == x.Id);
+
+                PayerOrPayee payerOrPayee = db.PayerOrPayees.Single(c => c.Id == id);
                 db.PayerOrPayees.Remove(payerOrPayee);
                 db.SaveChanges();
-            }
+
         }
     }
 }

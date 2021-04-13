@@ -38,6 +38,7 @@ namespace CW2
                 oneTimeRadioButton1.Checked = true;
             }
             this.OneTime= true;
+            this.Repeat = false;
         }
 
         private void repeatRadioButton1_CheckedChanged(object sender, EventArgs e)
@@ -47,6 +48,7 @@ namespace CW2
                 repeatRadioButton1.Checked = true;
             }
             this.Repeat = true;
+            this.OneTime = false;
         }
 
         public void setRadioButton()

@@ -36,12 +36,10 @@ namespace CW2
             // oneTimeRadioButton1
             // 
             this.oneTimeRadioButton1.AutoSize = true;
-            this.oneTimeRadioButton1.Checked = true;
             this.oneTimeRadioButton1.Location = new System.Drawing.Point(3, 17);
             this.oneTimeRadioButton1.Name = "oneTimeRadioButton1";
             this.oneTimeRadioButton1.Size = new System.Drawing.Size(98, 24);
             this.oneTimeRadioButton1.TabIndex = 0;
-            this.oneTimeRadioButton1.TabStop = true;
             this.oneTimeRadioButton1.Text = "OneTime";
             this.oneTimeRadioButton1.UseVisualStyleBackColor = true;
             this.oneTimeRadioButton1.CheckedChanged += new System.EventHandler(this.oneTimeRadioButton1_CheckedChanged);

@@ -87,6 +87,7 @@
     <Compile Include="Transaction.cs">
       <DependentUpon>CW2_SystemDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="TransactionModel.cs" />
     <Compile Include="TypeRadioButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
