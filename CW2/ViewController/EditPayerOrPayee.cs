@@ -140,20 +140,26 @@ namespace CW2.ViewController
 
             try
             {
-                payerOrPayeeModel.Delete(id);
-                LabelSetter("Deleted Successfully");
-                this.editNametextBox1.Text="";
-                this.editMailtextBox1.Text="";
-                this.editPhonetextBox1.Text="";
-                this.editAddressRichTextBox1.Text="";
-                this.IdtextBox1.Text = "";
+                DeletedDetailView deletedDetailView = new DeletedDetailView();
+                if (deletedDetailView.SetText(dataset))
+                {
+                    payerOrPayeeModel.Delete(id);
+                    LabelSetter("Deleted Successfully");
+                    this.editNametextBox1.Text = "";
+                    this.editMailtextBox1.Text = "";
+                    this.editPhonetextBox1.Text = "";
+                    this.editAddressRichTextBox1.Text = "";
+                    this.IdtextBox1.Text = "";
+                    dataset.Clear();
+                }
             }
             catch (Exception m)
             {
                 LabelSetter(m.Message);
+                //clearDatatable
+                this.dataset.Clear();
             }
-            //clearDatatable
-            this.dataset.Clear();
+
         }
     }
     

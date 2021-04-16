@@ -44,28 +44,31 @@ namespace CW2.ViewController
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.topLayout = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.usrLbl = new System.Windows.Forms.Label();
             this.weekEventdataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eventDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dailyTransdataGridView1 = new System.Windows.Forms.DataGridView();
             this.TransDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TransType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.transDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eventDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.predictDateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.predictbtn = new System.Windows.Forms.Button();
             this.predictedRichTextBox1 = new System.Windows.Forms.RichTextBox();
             this.Predictpanel1 = new System.Windows.Forms.Panel();
+            this.refreshPicBox = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.leftLayout.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.topLayout.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.weekEventdataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dailyTransdataGridView1)).BeginInit();
+            this.Predictpanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.refreshPicBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // leftLayout
@@ -202,6 +205,7 @@ namespace CW2.ViewController
             // 
             this.topLayout.BackColor = System.Drawing.Color.RoyalBlue;
             this.topLayout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.topLayout.Controls.Add(this.refreshPicBox);
             this.topLayout.Controls.Add(this.pictureBox1);
             this.topLayout.Controls.Add(this.usrLbl);
             this.topLayout.Controls.Add(this.label1);
@@ -212,16 +216,6 @@ namespace CW2.ViewController
             this.topLayout.Name = "topLayout";
             this.topLayout.Size = new System.Drawing.Size(1622, 71);
             this.topLayout.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CW2.Properties.Resources.Man;
-            this.pictureBox1.Location = new System.Drawing.Point(1558, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(52, 41);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
             // 
             // usrLbl
             // 
@@ -246,8 +240,43 @@ namespace CW2.ViewController
             this.weekEventdataGridView1.Name = "weekEventdataGridView1";
             this.weekEventdataGridView1.RowHeadersWidth = 62;
             this.weekEventdataGridView1.RowTemplate.Height = 28;
-            this.weekEventdataGridView1.Size = new System.Drawing.Size(671, 372);
+            this.weekEventdataGridView1.Size = new System.Drawing.Size(671, 434);
             this.weekEventdataGridView1.TabIndex = 0;
+            // 
+            // Date
+            // 
+            this.Date.DataPropertyName = "Date";
+            this.Date.HeaderText = "Original Date";
+            this.Date.MinimumWidth = 8;
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            this.Date.Width = 150;
+            // 
+            // eventDate
+            // 
+            this.eventDate.HeaderText = "Next Occurence";
+            this.eventDate.MinimumWidth = 8;
+            this.eventDate.Name = "eventDate";
+            this.eventDate.ReadOnly = true;
+            this.eventDate.Width = 150;
+            // 
+            // Type
+            // 
+            this.Type.DataPropertyName = "EventType";
+            this.Type.HeaderText = "Type";
+            this.Type.MinimumWidth = 8;
+            this.Type.Name = "Type";
+            this.Type.ReadOnly = true;
+            this.Type.Width = 150;
+            // 
+            // Description
+            // 
+            this.Description.DataPropertyName = "Description";
+            this.Description.HeaderText = "Description";
+            this.Description.MinimumWidth = 8;
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            this.Description.Width = 150;
             // 
             // dailyTransdataGridView1
             // 
@@ -262,7 +291,7 @@ namespace CW2.ViewController
             this.dailyTransdataGridView1.Name = "dailyTransdataGridView1";
             this.dailyTransdataGridView1.RowHeadersWidth = 62;
             this.dailyTransdataGridView1.RowTemplate.Height = 28;
-            this.dailyTransdataGridView1.Size = new System.Drawing.Size(719, 372);
+            this.dailyTransdataGridView1.Size = new System.Drawing.Size(719, 434);
             this.dailyTransdataGridView1.TabIndex = 2;
             // 
             // TransDate
@@ -301,44 +330,9 @@ namespace CW2.ViewController
             this.transDescription.ReadOnly = true;
             this.transDescription.Width = 150;
             // 
-            // Date
-            // 
-            this.Date.DataPropertyName = "Date";
-            this.Date.HeaderText = "Original Date";
-            this.Date.MinimumWidth = 8;
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            this.Date.Width = 150;
-            // 
-            // eventDate
-            // 
-            this.eventDate.HeaderText = "Next Occurence";
-            this.eventDate.MinimumWidth = 8;
-            this.eventDate.Name = "eventDate";
-            this.eventDate.ReadOnly = true;
-            this.eventDate.Width = 150;
-            // 
-            // Type
-            // 
-            this.Type.DataPropertyName = "EventType";
-            this.Type.HeaderText = "Type";
-            this.Type.MinimumWidth = 8;
-            this.Type.Name = "Type";
-            this.Type.ReadOnly = true;
-            this.Type.Width = 150;
-            // 
-            // Description
-            // 
-            this.Description.DataPropertyName = "Description";
-            this.Description.HeaderText = "Description";
-            this.Description.MinimumWidth = 8;
-            this.Description.Name = "Description";
-            this.Description.ReadOnly = true;
-            this.Description.Width = 150;
-            // 
             // predictDateTimePicker1
             // 
-            this.predictDateTimePicker1.Location = new System.Drawing.Point(401, 542);
+            this.predictDateTimePicker1.Location = new System.Drawing.Point(187, 99);
             this.predictDateTimePicker1.Name = "predictDateTimePicker1";
             this.predictDateTimePicker1.Size = new System.Drawing.Size(200, 26);
             this.predictDateTimePicker1.TabIndex = 3;
@@ -358,7 +352,7 @@ namespace CW2.ViewController
             // 
             // predictedRichTextBox1
             // 
-            this.predictedRichTextBox1.Location = new System.Drawing.Point(683, 542);
+            this.predictedRichTextBox1.Location = new System.Drawing.Point(433, 99);
             this.predictedRichTextBox1.Name = "predictedRichTextBox1";
             this.predictedRichTextBox1.Size = new System.Drawing.Size(520, 232);
             this.predictedRichTextBox1.TabIndex = 5;
@@ -367,10 +361,34 @@ namespace CW2.ViewController
             // Predictpanel1
             // 
             this.Predictpanel1.BackColor = System.Drawing.Color.Lavender;
+            this.Predictpanel1.Controls.Add(this.predictedRichTextBox1);
+            this.Predictpanel1.Controls.Add(this.predictDateTimePicker1);
             this.Predictpanel1.Location = new System.Drawing.Point(226, 443);
             this.Predictpanel1.Name = "Predictpanel1";
             this.Predictpanel1.Size = new System.Drawing.Size(1396, 386);
             this.Predictpanel1.TabIndex = 6;
+            // 
+            // refreshPicBox
+            // 
+            this.refreshPicBox.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.refreshPicBox.Image = global::CW2.Properties.Resources.refresh_;
+            this.refreshPicBox.Location = new System.Drawing.Point(1522, 19);
+            this.refreshPicBox.Name = "refreshPicBox";
+            this.refreshPicBox.Size = new System.Drawing.Size(30, 28);
+            this.refreshPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.refreshPicBox.TabIndex = 6;
+            this.refreshPicBox.TabStop = false;
+            this.refreshPicBox.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CW2.Properties.Resources.Man;
+            this.pictureBox1.Location = new System.Drawing.Point(1558, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(52, 41);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // Main
             // 
@@ -378,9 +396,7 @@ namespace CW2.ViewController
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1622, 829);
-            this.Controls.Add(this.predictedRichTextBox1);
             this.Controls.Add(this.predictbtn);
-            this.Controls.Add(this.predictDateTimePicker1);
             this.Controls.Add(this.dailyTransdataGridView1);
             this.Controls.Add(this.weekEventdataGridView1);
             this.Controls.Add(this.leftLayout);
@@ -400,9 +416,11 @@ namespace CW2.ViewController
             this.menuStrip1.PerformLayout();
             this.topLayout.ResumeLayout(false);
             this.topLayout.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.weekEventdataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dailyTransdataGridView1)).EndInit();
+            this.Predictpanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.refreshPicBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -439,5 +457,6 @@ namespace CW2.ViewController
         private System.Windows.Forms.Button predictbtn;
         private System.Windows.Forms.RichTextBox predictedRichTextBox1;
         private System.Windows.Forms.Panel Predictpanel1;
+        private System.Windows.Forms.PictureBox refreshPicBox;
     }
 }

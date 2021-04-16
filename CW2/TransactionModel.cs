@@ -62,7 +62,7 @@ namespace CW2
             {
                 income = db.Transactions
                  .Where(s => s.UserId == info.Id && 
-                             ((s.OccurenceType=="Repeat" && ((s.Date.Month>=from.Month && s.Date.Month<=to.Month) ||(s.Date.Day>=from.Day && s.Date.Day<= to.Day)) && s.TransactionType == "Income")
+                             ((s.OccurenceType=="Repeat" && ((s.Date.Day >= from.Day && s.Date.Day <= to.Day)&&(s.Date.Month>=from.Month && s.Date.Month<=to.Month)) && s.TransactionType == "Income")
                              || (s.Date >= from && s.Date <= to && s.TransactionType == "Income")))
                  .Select(s => s.Amount).Sum();
 
@@ -70,7 +70,7 @@ namespace CW2
                 int monthDiff = to.Month - from.Month;
                 repetetiveIncome = db.Transactions
                          .Where(s => s.UserId == info.Id &&
-                                     (s.OccurenceType == "Repeat" && ((s.Date.Month >= from.Month && s.Date.Month <= to.Month)||  (s.Date.Day >= from.Day && s.Date.Day <= to.Day)) && s.TransactionType == "Income")
+                                     (s.OccurenceType == "Repeat" && ((s.Date.Day >= from.Day && s.Date.Day <= to.Day) && (s.Date.Month >= from.Month && s.Date.Month <= to.Month)) && s.TransactionType == "Income")
                                      )
                          .Select(s => s.Amount).Sum();
                 if(monthDiff!=0)
@@ -96,14 +96,14 @@ namespace CW2
             {
                 expense = db.Transactions
                  .Where(s => s.UserId == info.Id &&
-                             ((s.OccurenceType == "Repeat" && ((s.Date.Month >= from.Month && s.Date.Month <= to.Month) || (s.Date.Day >= from.Day && s.Date.Day <= to.Day)) && s.TransactionType == "Expense")
+                             ((s.OccurenceType == "Repeat" && ((s.Date.Day >= from.Day && s.Date.Day <= to.Day) && (s.Date.Month >= from.Month && s.Date.Month <= to.Month)) && s.TransactionType == "Expense")
                              || (s.Date >= from && s.Date <= to && s.TransactionType == "Expense")))
                  .Select(s => s.Amount).Sum();
                 //caluculate Repetetive expense
                 int monthDiff = to.Month - from.Month;
                 repetetiveExpense = db.Transactions
                          .Where(s => s.UserId == info.Id &&
-                                     (s.OccurenceType == "Repeat" && ((s.Date.Month >= from.Month && s.Date.Month <= to.Month) || (s.Date.Day >= from.Day && s.Date.Day <= to.Day)) && s.TransactionType == "Expense")
+                                     (s.OccurenceType == "Repeat" && ((s.Date.Day >= from.Day && s.Date.Day <= to.Day) && (s.Date.Month >= from.Month && s.Date.Month <= to.Month)) && s.TransactionType == "Expense")
                                      )
                          .Select(s => s.Amount).Sum();
                 if(monthDiff!=0)

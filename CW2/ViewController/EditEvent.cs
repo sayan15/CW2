@@ -127,14 +127,27 @@ namespace CW2.ViewController
                 EventModel model = new EventModel();
                 try
                 {
-                    model.DeleteEVent(dataset);
-                    MessageBox.Show("Succesfully Deleted the Event");
+                    DeletedDetailView deletedDetailView = new DeletedDetailView();
+
+                    if (deletedDetailView.SetText(dataset))
+                    {
+                        this.eventDate.Value = DateTime.Today;
+                        this.eventDescTextBox1.Text = "";
+                        model.DeleteEVent(dataset);
+                        this.evntIDTxtBox.Text = "";
+
+                        MessageBox.Show("Succesfully Deleted the Event");
+                        //clearDatatable
+                        this.dataset.Clear();
+                }
+
                 }
                 catch (Exception m)
                 {
                     MessageBox.Show(m.Message);
+                    //clearDatatable
+                    this.dataset.Clear();
                 }
-                dataset.Clear();
             
         }
     }

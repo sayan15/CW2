@@ -151,5 +151,11 @@ namespace CW2.ViewController
             }
             return value;
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.loadWeekEvent();
+            this.loadDailyTransaction();
+        }
     }
 }

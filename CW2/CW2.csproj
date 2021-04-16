@@ -79,6 +79,12 @@
       <DependentUpon>CW2_SystemDB.tt</DependentUpon>
     </Compile>
     <Compile Include="EventModel.cs" />
+    <Compile Include="LblandText.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LblandText.Designer.cs">
+      <DependentUpon>LblandText.cs</DependentUpon>
+    </Compile>
     <Compile Include="PayerOrPayee.cs">
       <DependentUpon>CW2_SystemDB.tt</DependentUpon>
     </Compile>
@@ -116,6 +122,12 @@
     </Compile>
     <Compile Include="ViewController\AddTransaction.Designer.cs">
       <DependentUpon>AddTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController\DeletedDetailView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewController\DeletedDetailView.Designer.cs">
+      <DependentUpon>DeletedDetailView.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewController\EditEvent.cs">
       <SubType>Form</SubType>
@@ -173,6 +185,9 @@
     <Compile Include="ViewController\ViewPayerPayee.Designer.cs">
       <DependentUpon>ViewPayerPayee.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="LblandText.resx">
+      <DependentUpon>LblandText.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TypeRadioButton.resx">
       <DependentUpon>TypeRadioButton.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewController\AddTransaction.resx">
       <DependentUpon>AddTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewController\DeletedDetailView.resx">
+      <DependentUpon>DeletedDetailView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewController\EditEvent.resx">
       <DependentUpon>EditEvent.cs</DependentUpon>
@@ -275,6 +293,9 @@
       <LastGenOutput>CW2_SystemDB.cs</LastGenOutput>
       <DependentUpon>CW2_SystemDB.edmx</DependentUpon>
     </Content>
+    <None Include="Resources\images %281%29.png" />
+    <None Include="Resources\images.png" />
+    <None Include="Resources\refresh.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

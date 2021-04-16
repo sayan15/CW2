@@ -141,20 +141,26 @@ namespace CW2.ViewController
 
             try
             {
-                TransactionModel transactionModel = new TransactionModel();
-                transactionModel.Delete(id);
-                SetAlertLabel("Successfully Deleted");
-                File.Delete("EditTransaction.xml");
-                this.transactionIDTxtBox.Text = "";
-                this.amtTxtBox.Text = "";
-                this.descTextBox1.Text = "";
-                this.payerPayeeList.ClearSelected();
+                DeletedDetailView deletedDetailView = new DeletedDetailView();
+                if (deletedDetailView.SetText(dataset))
+                {
+                    TransactionModel transactionModel = new TransactionModel();
+                    transactionModel.Delete(id);
+                    SetAlertLabel("Successfully Deleted");
+                    File.Delete("EditTransaction.xml");
+                    this.transactionIDTxtBox.Text = "";
+                    this.amtTxtBox.Text = "";
+                    this.descTextBox1.Text = "";
+                    this.payerPayeeList.ClearSelected();
+                    dataset.Clear();
+                }
+
             }
             catch (Exception m)
             {
                 SetAlertLabel(m.Message);
+                dataset.Clear();
             }
-            dataset.Clear();
         }
 
         private void payee_CheckedChanged(object sender, EventArgs e)
