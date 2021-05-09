@@ -30,6 +30,13 @@ namespace CW2.ViewController
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.transactionTypegroupBox1 = new System.Windows.Forms.GroupBox();
+            this.expenseRadioButton1 = new System.Windows.Forms.RadioButton();
+            this.incomeRadioButton1 = new System.Windows.Forms.RadioButton();
+            this.transactonTypeLbl = new System.Windows.Forms.Label();
+            this.alertLabel = new System.Windows.Forms.Label();
+            this.payerPayeeList = new System.Windows.Forms.ListBox();
+            this.occurenceTypeRadioButton1 = new CW2.TypeRadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.saveBtn = new System.Windows.Forms.Button();
             this.descTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -42,13 +49,6 @@ namespace CW2.ViewController
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.payerPayeeList = new System.Windows.Forms.ListBox();
-            this.alertLabel = new System.Windows.Forms.Label();
-            this.transactonTypeLbl = new System.Windows.Forms.Label();
-            this.transactionTypegroupBox1 = new System.Windows.Forms.GroupBox();
-            this.incomeRadioButton1 = new System.Windows.Forms.RadioButton();
-            this.expenseRadioButton1 = new System.Windows.Forms.RadioButton();
-            this.occurenceTypeRadioButton1 = new CW2.TypeRadioButton();
             this.panel1.SuspendLayout();
             this.transactionTypegroupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +77,78 @@ namespace CW2.ViewController
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(822, 790);
             this.panel1.TabIndex = 0;
+            // 
+            // transactionTypegroupBox1
+            // 
+            this.transactionTypegroupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.transactionTypegroupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.transactionTypegroupBox1.Controls.Add(this.expenseRadioButton1);
+            this.transactionTypegroupBox1.Controls.Add(this.incomeRadioButton1);
+            this.transactionTypegroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.transactionTypegroupBox1.Location = new System.Drawing.Point(430, 239);
+            this.transactionTypegroupBox1.Name = "transactionTypegroupBox1";
+            this.transactionTypegroupBox1.Size = new System.Drawing.Size(265, 59);
+            this.transactionTypegroupBox1.TabIndex = 18;
+            this.transactionTypegroupBox1.TabStop = false;
+            // 
+            // expenseRadioButton1
+            // 
+            this.expenseRadioButton1.AutoSize = true;
+            this.expenseRadioButton1.Location = new System.Drawing.Point(159, 18);
+            this.expenseRadioButton1.Name = "expenseRadioButton1";
+            this.expenseRadioButton1.Size = new System.Drawing.Size(96, 24);
+            this.expenseRadioButton1.TabIndex = 1;
+            this.expenseRadioButton1.Text = "Expense";
+            this.expenseRadioButton1.UseVisualStyleBackColor = true;
+            // 
+            // incomeRadioButton1
+            // 
+            this.incomeRadioButton1.AutoSize = true;
+            this.incomeRadioButton1.Checked = true;
+            this.incomeRadioButton1.Location = new System.Drawing.Point(12, 21);
+            this.incomeRadioButton1.Name = "incomeRadioButton1";
+            this.incomeRadioButton1.Size = new System.Drawing.Size(87, 24);
+            this.incomeRadioButton1.TabIndex = 0;
+            this.incomeRadioButton1.TabStop = true;
+            this.incomeRadioButton1.Text = "Income";
+            this.incomeRadioButton1.UseVisualStyleBackColor = true;
+            // 
+            // transactonTypeLbl
+            // 
+            this.transactonTypeLbl.AutoSize = true;
+            this.transactonTypeLbl.Location = new System.Drawing.Point(161, 261);
+            this.transactonTypeLbl.Name = "transactonTypeLbl";
+            this.transactonTypeLbl.Size = new System.Drawing.Size(126, 20);
+            this.transactonTypeLbl.TabIndex = 17;
+            this.transactonTypeLbl.Text = "TransactionType";
+            // 
+            // alertLabel
+            // 
+            this.alertLabel.AutoSize = true;
+            this.alertLabel.Location = new System.Drawing.Point(26, 20);
+            this.alertLabel.Name = "alertLabel";
+            this.alertLabel.Size = new System.Drawing.Size(0, 20);
+            this.alertLabel.TabIndex = 16;
+            // 
+            // payerPayeeList
+            // 
+            this.payerPayeeList.FormattingEnabled = true;
+            this.payerPayeeList.ItemHeight = 20;
+            this.payerPayeeList.Location = new System.Drawing.Point(437, 177);
+            this.payerPayeeList.Name = "payerPayeeList";
+            this.payerPayeeList.Size = new System.Drawing.Size(239, 44);
+            this.payerPayeeList.TabIndex = 15;
+            // 
+            // occurenceTypeRadioButton1
+            // 
+            this.occurenceTypeRadioButton1.BackColor = System.Drawing.Color.AliceBlue;
+            this.occurenceTypeRadioButton1.ForeColor = System.Drawing.Color.Black;
+            this.occurenceTypeRadioButton1.Location = new System.Drawing.Point(440, 386);
+            this.occurenceTypeRadioButton1.Name = "occurenceTypeRadioButton1";
+            this.occurenceTypeRadioButton1.OneTime = false;
+            this.occurenceTypeRadioButton1.Repeat = false;
+            this.occurenceTypeRadioButton1.Size = new System.Drawing.Size(312, 54);
+            this.occurenceTypeRadioButton1.TabIndex = 14;
             // 
             // label1
             // 
@@ -115,7 +187,7 @@ namespace CW2.ViewController
             // payer
             // 
             this.payer.AutoSize = true;
-            this.payer.Location = new System.Drawing.Point(603, 121);
+            this.payer.Location = new System.Drawing.Point(589, 121);
             this.payer.Name = "payer";
             this.payer.Size = new System.Drawing.Size(74, 24);
             this.payer.TabIndex = 8;
@@ -185,75 +257,6 @@ namespace CW2.ViewController
             this.label2.Size = new System.Drawing.Size(65, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Amount";
-            // 
-            // payerPayeeList
-            // 
-            this.payerPayeeList.FormattingEnabled = true;
-            this.payerPayeeList.ItemHeight = 20;
-            this.payerPayeeList.Location = new System.Drawing.Point(437, 177);
-            this.payerPayeeList.Name = "payerPayeeList";
-            this.payerPayeeList.Size = new System.Drawing.Size(239, 44);
-            this.payerPayeeList.TabIndex = 15;
-            // 
-            // alertLabel
-            // 
-            this.alertLabel.AutoSize = true;
-            this.alertLabel.Location = new System.Drawing.Point(26, 20);
-            this.alertLabel.Name = "alertLabel";
-            this.alertLabel.Size = new System.Drawing.Size(0, 20);
-            this.alertLabel.TabIndex = 16;
-            // 
-            // transactonTypeLbl
-            // 
-            this.transactonTypeLbl.AutoSize = true;
-            this.transactonTypeLbl.Location = new System.Drawing.Point(161, 261);
-            this.transactonTypeLbl.Name = "transactonTypeLbl";
-            this.transactonTypeLbl.Size = new System.Drawing.Size(126, 20);
-            this.transactonTypeLbl.TabIndex = 17;
-            this.transactonTypeLbl.Text = "TransactionType";
-            // 
-            // transactionTypegroupBox1
-            // 
-            this.transactionTypegroupBox1.Controls.Add(this.expenseRadioButton1);
-            this.transactionTypegroupBox1.Controls.Add(this.incomeRadioButton1);
-            this.transactionTypegroupBox1.Location = new System.Drawing.Point(428, 238);
-            this.transactionTypegroupBox1.Name = "transactionTypegroupBox1";
-            this.transactionTypegroupBox1.Size = new System.Drawing.Size(322, 54);
-            this.transactionTypegroupBox1.TabIndex = 18;
-            this.transactionTypegroupBox1.TabStop = false;
-            // 
-            // incomeRadioButton1
-            // 
-            this.incomeRadioButton1.AutoSize = true;
-            this.incomeRadioButton1.Checked = true;
-            this.incomeRadioButton1.Location = new System.Drawing.Point(12, 21);
-            this.incomeRadioButton1.Name = "incomeRadioButton1";
-            this.incomeRadioButton1.Size = new System.Drawing.Size(87, 24);
-            this.incomeRadioButton1.TabIndex = 0;
-            this.incomeRadioButton1.TabStop = true;
-            this.incomeRadioButton1.Text = "Income";
-            this.incomeRadioButton1.UseVisualStyleBackColor = true;
-            // 
-            // expenseRadioButton1
-            // 
-            this.expenseRadioButton1.AutoSize = true;
-            this.expenseRadioButton1.Location = new System.Drawing.Point(180, 21);
-            this.expenseRadioButton1.Name = "expenseRadioButton1";
-            this.expenseRadioButton1.Size = new System.Drawing.Size(96, 24);
-            this.expenseRadioButton1.TabIndex = 1;
-            this.expenseRadioButton1.Text = "Expense";
-            this.expenseRadioButton1.UseVisualStyleBackColor = true;
-            // 
-            // occurenceTypeRadioButton1
-            // 
-            this.occurenceTypeRadioButton1.BackColor = System.Drawing.Color.AliceBlue;
-            this.occurenceTypeRadioButton1.ForeColor = System.Drawing.Color.Black;
-            this.occurenceTypeRadioButton1.Location = new System.Drawing.Point(428, 388);
-            this.occurenceTypeRadioButton1.Name = "occurenceTypeRadioButton1";
-            this.occurenceTypeRadioButton1.OneTime = false;
-            this.occurenceTypeRadioButton1.Repeat = false;
-            this.occurenceTypeRadioButton1.Size = new System.Drawing.Size(265, 54);
-            this.occurenceTypeRadioButton1.TabIndex = 14;
             // 
             // AddTransaction
             // 

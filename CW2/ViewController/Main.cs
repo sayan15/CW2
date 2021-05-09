@@ -16,6 +16,7 @@ namespace CW2.ViewController
         public Main()
         {
             InitializeComponent();
+            
         }
         public UserDetails newUser;
     
@@ -74,36 +75,40 @@ namespace CW2.ViewController
             viewPayerPayee.Activate();
             viewPayerPayee.ShowDialog();
         }
-
+        List<Event> list;
         public void loadWeekEvent()
         {
             try
             {
                 EventModel eventModel = new EventModel();
-                var list = eventModel.GetWeekDetails(newUser, Convert.ToDateTime(DateTime.Today.ToShortDateString()));
+                list = eventModel.GetWeekDetails(newUser, Convert.ToDateTime(DateTime.Today.ToShortDateString()));
                 this.weekEventdataGridView1.AutoGenerateColumns = false;
                 this.weekEventdataGridView1.DataSource = list;
-                int rowcount = 0;
-                foreach (var row in list)
-                {
-                    if ((DateTime.Today.Day - row.Date.Day) < 0)
-                    {
-                        this.weekEventdataGridView1[1, rowcount].Value = row.Date.Day.ToString() + "-" + row.Date.Month.ToString() + "-" + DateTime.Today.Year;
-                    }
-                    else
-                    {
-                        this.weekEventdataGridView1[1, rowcount].Value = row.Date.Day.ToString() + "-" + DateTime.Today.AddMonths(1).Month.ToString() + "-" + DateTime.Today.Year;
-                    }
-                    rowcount = rowcount + 1;
-                }
-
                 this.weekEventdataGridView1.ForeColor= System.Drawing.Color.Red;
-                
+               
             }
-            catch
+            catch(Exception m)
             {
-
+                MessageBox.Show(m.Message);
             }
+        }
+        //to get the next occurence date if its repeat task or appointment
+        private void getnextOccurenceDate()
+        {
+            int rowcount = 0;
+            foreach (var row in list)
+            {
+                if ((DateTime.Today.Day - row.Date.Day) < 0)
+                {
+                    this.weekEventdataGridView1[1, rowcount].Value = row.Date.Day.ToString() + "-" + row.Date.Month.ToString() + "-" + DateTime.Today.Year;
+                }
+                else
+                {
+                    this.weekEventdataGridView1[1, rowcount].Value = row.Date.Day.ToString() + "-" + DateTime.Today.AddMonths(1).Month.ToString() + "-" + DateTime.Today.Year;
+                }
+                rowcount = rowcount + 1;
+            }
+
         }
         public void loadDailyTransaction()
         {
@@ -115,9 +120,9 @@ namespace CW2.ViewController
                 this.dailyTransdataGridView1.DataSource = list;
                 this.dailyTransdataGridView1.ForeColor = System.Drawing.Color.Red;
             }
-            catch
+            catch(Exception m)
             {
-
+                MessageBox.Show(m.Message);
             }
         }
 
@@ -129,13 +134,13 @@ namespace CW2.ViewController
            // System.Windows.Forms.Application.Exit();
         }
 
-        
+        //predict value
         private async void predictbtn_Click(object sender, EventArgs e)
         {
             var val=await PredictedValue();
             this.predictedRichTextBox1.Text += this.predictDateTimePicker1.Value.ToShortDateString().ToString() + "-----------------" + Math.Round(val,2)+ "\r\n";
         }
-
+        //async method to get predicted value
         public async Task<double> PredictedValue()
         {
             var value=0.0;
@@ -156,6 +161,8 @@ namespace CW2.ViewController
         {
             this.loadWeekEvent();
             this.loadDailyTransaction();
+            this.getnextOccurenceDate();
         }
+
     }
 }

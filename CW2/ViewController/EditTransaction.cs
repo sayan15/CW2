@@ -20,6 +20,7 @@ namespace CW2.ViewController
         public CW2_SystemDB dataset;
         UserDetails userDetails = new UserDetails();
         List<PayerPayeeList> list;
+        DateTime oldDate;
         public void PublishData()
         {
             this.transactionIDTxtBox.Text=(this.dataset.Transactions.Rows[0]["Id"]).ToString();
@@ -27,6 +28,8 @@ namespace CW2.ViewController
             this.payerOrPayeeIdtextBox1.Text= (this.dataset.Transactions.Rows[0]["PayerOrPayeeId"]).ToString();
             this.descTextBox1.Text= (this.dataset.Transactions.Rows[0]["Description"]).ToString();
             this.transactionDate.Value=Convert.ToDateTime( (this.dataset.Transactions.Rows[0]["Date"]).ToString());
+            oldDate = Convert.ToDateTime((this.dataset.Transactions.Rows[0]["Date"]).ToString());
+            
             if ((this.dataset.Transactions.Rows[0]["TransactionType"]).ToString() == "Income")
             {
                 this.editIncomeRadioButton1.Checked = true;
@@ -59,7 +62,7 @@ namespace CW2.ViewController
             {
                 if (this.payerPayeeList.SelectedIndex != -1)
                 {
-                    if (this.transactionDate.Value >= DateTime.Today)
+                    if (this.transactionDate.Value >= DateTime.Today || this.transactionDate.Value== oldDate)
                     {
                         CW2_SystemDB.TransactionsRow rows = this.dataset.Transactions.NewTransactionsRow();
                         string type;

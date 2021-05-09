@@ -30,6 +30,11 @@ namespace CW2.ViewController
         private void InitializeComponent()
         {
             this.financialReportView = new System.Windows.Forms.DataGridView();
+            this.TransNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.editButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.fromDateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -41,16 +46,13 @@ namespace CW2.ViewController
             this.totalExpensetextBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.netTextBox1 = new System.Windows.Forms.TextBox();
-            this.TransNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.editButton = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.financialReportView)).BeginInit();
             this.SuspendLayout();
             // 
             // financialReportView
             // 
+            this.financialReportView.AllowUserToAddRows = false;
+            this.financialReportView.AllowUserToDeleteRows = false;
             this.financialReportView.BackgroundColor = System.Drawing.Color.Azure;
             this.financialReportView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.financialReportView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -66,7 +68,51 @@ namespace CW2.ViewController
             this.financialReportView.Size = new System.Drawing.Size(767, 673);
             this.financialReportView.TabIndex = 2;
             this.financialReportView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.financialReportView_CellClick);
-            
+            // 
+            // TransNumber
+            // 
+            this.TransNumber.DataPropertyName = "Id";
+            this.TransNumber.HeaderText = "Id";
+            this.TransNumber.MinimumWidth = 8;
+            this.TransNumber.Name = "TransNumber";
+            this.TransNumber.ReadOnly = true;
+            this.TransNumber.Width = 150;
+            // 
+            // Amount
+            // 
+            this.Amount.DataPropertyName = "Amount";
+            this.Amount.HeaderText = "Amount";
+            this.Amount.MinimumWidth = 8;
+            this.Amount.Name = "Amount";
+            this.Amount.ReadOnly = true;
+            this.Amount.Width = 150;
+            // 
+            // type
+            // 
+            this.type.DataPropertyName = "TransactionType";
+            this.type.HeaderText = "Type";
+            this.type.MinimumWidth = 8;
+            this.type.Name = "type";
+            this.type.ReadOnly = true;
+            this.type.Width = 150;
+            // 
+            // Description
+            // 
+            this.Description.DataPropertyName = "Description";
+            this.Description.HeaderText = "Description";
+            this.Description.MinimumWidth = 8;
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            this.Description.Width = 150;
+            // 
+            // editButton
+            // 
+            this.editButton.HeaderText = "Edit";
+            this.editButton.MinimumWidth = 8;
+            this.editButton.Name = "editButton";
+            this.editButton.Text = "Edit";
+            this.editButton.UseColumnTextForButtonValue = true;
+            this.editButton.Width = 150;
             // 
             // label1
             // 
@@ -161,51 +207,6 @@ namespace CW2.ViewController
             this.netTextBox1.Name = "netTextBox1";
             this.netTextBox1.Size = new System.Drawing.Size(100, 26);
             this.netTextBox1.TabIndex = 12;
-            // 
-            // TransNumber
-            // 
-            this.TransNumber.DataPropertyName = "Id";
-            this.TransNumber.HeaderText = "Id";
-            this.TransNumber.MinimumWidth = 8;
-            this.TransNumber.Name = "TransNumber";
-            this.TransNumber.ReadOnly = true;
-            this.TransNumber.Width = 150;
-            // 
-            // Amount
-            // 
-            this.Amount.DataPropertyName = "Amount";
-            this.Amount.HeaderText = "Amount";
-            this.Amount.MinimumWidth = 8;
-            this.Amount.Name = "Amount";
-            this.Amount.ReadOnly = true;
-            this.Amount.Width = 150;
-            // 
-            // type
-            // 
-            this.type.DataPropertyName = "TransactionType";
-            this.type.HeaderText = "Type";
-            this.type.MinimumWidth = 8;
-            this.type.Name = "type";
-            this.type.ReadOnly = true;
-            this.type.Width = 150;
-            // 
-            // Description
-            // 
-            this.Description.DataPropertyName = "Description";
-            this.Description.HeaderText = "Description";
-            this.Description.MinimumWidth = 8;
-            this.Description.Name = "Description";
-            this.Description.ReadOnly = true;
-            this.Description.Width = 150;
-            // 
-            // editButton
-            // 
-            this.editButton.HeaderText = "Edit";
-            this.editButton.MinimumWidth = 8;
-            this.editButton.Name = "editButton";
-            this.editButton.Text = "Edit";
-            this.editButton.UseColumnTextForButtonValue = true;
-            this.editButton.Width = 150;
             // 
             // FinancialReport
             // 

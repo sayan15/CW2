@@ -29,7 +29,7 @@ namespace CW2
                     newUsr.Id = userModel.GetID(newUsr);
                     rg.newUser = this.newUsr;
                     this.Hide();
-                    rg.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+                    
                     rg.Activate();
                     rg.loadWeekEvent();
                     rg.loadDailyTransaction();

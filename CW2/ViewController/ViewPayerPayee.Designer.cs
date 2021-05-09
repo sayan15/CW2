@@ -30,9 +30,6 @@ namespace CW2.ViewController
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.payeeRadioButton1 = new System.Windows.Forms.RadioButton();
-            this.payerRadioButton = new System.Windows.Forms.RadioButton();
-            this.payerOrPayeeViewBtn = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,11 +38,16 @@ namespace CW2.ViewController
             this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.payeeRadioButton1 = new System.Windows.Forms.RadioButton();
+            this.payerRadioButton = new System.Windows.Forms.RadioButton();
+            this.payerOrPayeeViewBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Azure;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -64,39 +66,6 @@ namespace CW2.ViewController
             this.dataGridView1.Size = new System.Drawing.Size(816, 684);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // payeeRadioButton1
-            // 
-            this.payeeRadioButton1.AutoSize = true;
-            this.payeeRadioButton1.Location = new System.Drawing.Point(867, 89);
-            this.payeeRadioButton1.Name = "payeeRadioButton1";
-            this.payeeRadioButton1.Size = new System.Drawing.Size(78, 24);
-            this.payeeRadioButton1.TabIndex = 1;
-            this.payeeRadioButton1.TabStop = true;
-            this.payeeRadioButton1.Text = "Payee";
-            this.payeeRadioButton1.UseVisualStyleBackColor = true;
-            // 
-            // payerRadioButton
-            // 
-            this.payerRadioButton.AutoSize = true;
-            this.payerRadioButton.Location = new System.Drawing.Point(981, 89);
-            this.payerRadioButton.Name = "payerRadioButton";
-            this.payerRadioButton.Size = new System.Drawing.Size(74, 24);
-            this.payerRadioButton.TabIndex = 2;
-            this.payerRadioButton.TabStop = true;
-            this.payerRadioButton.Text = "Payer";
-            this.payerRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // payerOrPayeeViewBtn
-            // 
-            this.payerOrPayeeViewBtn.BackColor = System.Drawing.Color.Silver;
-            this.payerOrPayeeViewBtn.Location = new System.Drawing.Point(920, 174);
-            this.payerOrPayeeViewBtn.Name = "payerOrPayeeViewBtn";
-            this.payerOrPayeeViewBtn.Size = new System.Drawing.Size(75, 33);
-            this.payerOrPayeeViewBtn.TabIndex = 3;
-            this.payerOrPayeeViewBtn.Text = "View";
-            this.payerOrPayeeViewBtn.UseVisualStyleBackColor = false;
-            this.payerOrPayeeViewBtn.Click += new System.EventHandler(this.payerOrPayeeViewBtn_Click);
             // 
             // Id
             // 
@@ -170,6 +139,39 @@ namespace CW2.ViewController
             this.button.Text = "Edit";
             this.button.UseColumnTextForButtonValue = true;
             this.button.Width = 150;
+            // 
+            // payeeRadioButton1
+            // 
+            this.payeeRadioButton1.AutoSize = true;
+            this.payeeRadioButton1.Location = new System.Drawing.Point(867, 89);
+            this.payeeRadioButton1.Name = "payeeRadioButton1";
+            this.payeeRadioButton1.Size = new System.Drawing.Size(78, 24);
+            this.payeeRadioButton1.TabIndex = 1;
+            this.payeeRadioButton1.TabStop = true;
+            this.payeeRadioButton1.Text = "Payee";
+            this.payeeRadioButton1.UseVisualStyleBackColor = true;
+            // 
+            // payerRadioButton
+            // 
+            this.payerRadioButton.AutoSize = true;
+            this.payerRadioButton.Location = new System.Drawing.Point(981, 89);
+            this.payerRadioButton.Name = "payerRadioButton";
+            this.payerRadioButton.Size = new System.Drawing.Size(74, 24);
+            this.payerRadioButton.TabIndex = 2;
+            this.payerRadioButton.TabStop = true;
+            this.payerRadioButton.Text = "Payer";
+            this.payerRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // payerOrPayeeViewBtn
+            // 
+            this.payerOrPayeeViewBtn.BackColor = System.Drawing.Color.Silver;
+            this.payerOrPayeeViewBtn.Location = new System.Drawing.Point(920, 174);
+            this.payerOrPayeeViewBtn.Name = "payerOrPayeeViewBtn";
+            this.payerOrPayeeViewBtn.Size = new System.Drawing.Size(75, 33);
+            this.payerOrPayeeViewBtn.TabIndex = 3;
+            this.payerOrPayeeViewBtn.Text = "View";
+            this.payerOrPayeeViewBtn.UseVisualStyleBackColor = false;
+            this.payerOrPayeeViewBtn.Click += new System.EventHandler(this.payerOrPayeeViewBtn_Click);
             // 
             // ViewPayerPayee
             // 

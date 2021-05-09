@@ -44,6 +44,8 @@ namespace CW2.ViewController
             // 
             // eventDataGridView1
             // 
+            this.eventDataGridView1.AllowUserToAddRows = false;
+            this.eventDataGridView1.AllowUserToDeleteRows = false;
             this.eventDataGridView1.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.eventDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.eventDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {

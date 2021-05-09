@@ -25,14 +25,22 @@ namespace CW2.ViewController
             DateTime to= Convert.ToDateTime(this.toDateTimePicker1.Value.Date.ToShortDateString());
             try
             {
-                list = transactionModel.GetDetails(userDetails, from, to);
-                this.financialReportView.AutoGenerateColumns = false;
-                this.financialReportView.DataSource = list;
-                double totalIncome = transactionModel.GetTotalIncome(userDetails, from, to);
-                double totalExpense= transactionModel.GetTotalExpense(userDetails, from, to);
-                this.totalIncometextBox1.Text =totalIncome.ToString();
-                this.totalExpensetextBox1.Text = totalExpense.ToString();
-                this.netTextBox1.Text = (totalIncome - totalExpense).ToString();
+                if(((to-from).TotalDays<=30) && (from<=to))
+                {
+                    list = transactionModel.GetDetails(userDetails, from, to);
+                    this.financialReportView.AutoGenerateColumns = false;
+                    this.financialReportView.DataSource = list;
+                    double totalIncome = transactionModel.GetTotalIncome(userDetails, from, to);
+                    double totalExpense = transactionModel.GetTotalExpense(userDetails, from, to);
+                    this.totalIncometextBox1.Text = totalIncome.ToString();
+                    this.totalExpensetextBox1.Text = totalExpense.ToString();
+                    this.netTextBox1.Text = (totalIncome - totalExpense).ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Please select the date raange between 30 days");
+                }
+
             }
             catch(Exception m)
             {
